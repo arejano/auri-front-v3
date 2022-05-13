@@ -1,0 +1,81 @@
+@import "tailwind.css";
+@import "~vue-snotify/styles/simple.css";
+
+.bg-black-auri {
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 25, 25, var(--tw-bg-opacity));
+}
+
+.bg-div-black-auri {
+    --tw-bg-opacity: 1;
+    background-color: rgba(27, 27, 27, var(--tw-bg-opacity));
+}
+
+.bg-table-tr {
+    background-color: #232323;
+}
+
+.auri-rounded{
+    border-radius: 50%;
+}
+
+.auri-title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.5px;
+    color: #FFB81C;
+}
+
+.auri-sub-title {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.5px;
+    color: #DDDDDD;
+}
+
+.menu-int {
+    cursor:pointer;
+    font-size: 24px;
+    line-height: 140%;
+    color:rgba(255, 255, 255, 0.3);
+}
+
+.table-color-font {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color:#CCD2E3;
+}
+
+.menu-int-active {
+    color:#FFB81C;
+}
+
+.text-auri-lightgrey {
+    --tw-text-opacity: 0.6;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.text-auri-yellow {
+    --tw-text-opacity: 1;
+    color: rgba(255, 184, 28, var(--tw-text-opacity));
+}
+
+.border-auri-1{
+    --tw-border-opacity: 1;
+    border-color: rgba(255, 184, 28, var(--tw-border-opacity));
+}
+
+.auri-color {
+    color: #FFB81C;
+}
+
+.auri-sub-title-intern {
+    color: #FFB81C;
+    border-bottom: 1px solid;
+  }

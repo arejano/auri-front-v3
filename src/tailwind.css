@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.label-nav {
+  @apply cursor-pointer h-12 pl-2 pr-12 flex items-center hover:text-yellow-500;
+}
+
+.icon-nav {
+  @apply cursor-pointer hover:text-yellow-400/50 h-12 justify-center border-yellow-500/60 flex items-center;
+}
+
+.icon-nav-minimal-selected{
+  @apply text-yellow-400/50 bg-gradient-to-r from-yellow-200/20 to-yellow-50/10 border-l border-yellow-400 rounded-r;
+}
+
+.icon-nav-minimal:hover{
+  @apply text-yellow-400/50 bg-gradient-to-r from-yellow-200/20 to-yellow-50/10 border-l border-yellow-400 rounded-r;
+}
