@@ -18,7 +18,7 @@ export default {
 
 <template>
   <div class="flex flex-col">
-    <span class="tracking-wider text-lg dark:text-white">{{ title }}</span>
-    <span class="text-sm dark:text-white">{{ subtitle }}</span>
+    <span class="tracking-wider font-bold text-2xl dark:text-zinc-300">{{ title }}</span>
+    <span class="text-sm dark:text-zinc-300 tracking-wide py-2">{{ subtitle }}</span>
   </div>
 </template>

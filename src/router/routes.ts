@@ -1,21 +1,22 @@
-import Home from "./views/Home.vue";
-import Dashboard from "./views/Dashboard.vue";
-import Perfil from "./views/Perfil.vue";
-import Lancamentos from "./views/Lancamentos.vue";
-import Ajuda from "./views/Ajuda.vue";
-import Configuracoes from "./views/Configuracoes.vue";
-import ReportarErro from "./views/ReportarErro.vue";
-import CriadorUrls from "./views/CriadorUrls.vue";
-import Leads from "./views/Leads.vue";
-import Conta from "./views/Conta.vue";
-import Contas from "./views/Contas.vue";
-import Usuarios from "./views/Usuarios.vue";
-import Integracoes from "./views/Integracoes.vue";
-import Importacoes from "./views/Importacoes.vue";
-import NotFound from "./views/NotFound.vue";
+import Home from "@views/Home.vue";
+import Dashboard from "@views/Dashboard.vue";
+import Perfil from "@views/Perfil.vue";
+import Lancamentos from "@views/Lancamentos.vue";
+import Ajuda from "@views/Ajuda.vue";
+import Configuracoes from "@views/Configuracoes.vue";
+import ReportarErro from "@views/ReportarErro.vue";
+import CriadorUrls from "@views/CriadorUrls.vue";
+import Leads from "@views/Leads.vue";
+import Conta from "@views/Conta.vue";
+import Contas from "@views/Contas.vue";
+import Usuarios from "@views/Usuarios.vue";
+import Integracoes from "@views/Integracoes.vue";
+import Importacoes from "@views/Importacoes.vue";
+import NotFound from "@views/NotFound.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
-export const routes = [
+const routes = [
+  { path: "/login", component: Home, meta: { title: "Login" } },
   { path: "/", component: Home, meta: { title: "Home" } },
   { path: "/dashboard", component: Dashboard, meta: { title: "Dashboard" } },
   {
@@ -48,3 +49,5 @@ export const routes = [
   },
   { path: "/:path(.*)", component: NotFound },
 ];
+
+export default routes;
