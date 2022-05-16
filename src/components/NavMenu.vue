@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex select-none space-x-6 mb-6">
+  <div class="flex select-none whitespace-nowrap space-x-6 mb-6">
     <div v-for="item in menu" :key="item.label">
       <router-link
         :to="item.path"
