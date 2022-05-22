@@ -28,7 +28,7 @@ export default {
 <template>
   <aside class="select-none h-full" aria-label="Sidebar">
     <div
-      class="overflow-y-auto border-r border-neutral-200 dark:border-neutral-700/50 flex flex-col justify-between h-full py-4  bg-gray-50 dark:bg-neutral-500/10 shadow-lg"
+      class="overflow-y-auto border-r border-neutral-200 dark:border-neutral-700/50 flex flex-col justify-between h-full py-4  bg-amber-50 dark:bg-neutral-500/10 shadow-lg "
     >
       <div>
         <!-- logo -->
@@ -36,11 +36,11 @@ export default {
           <li v-for="item in menu" :key="item.path">
             <router-link
               :to="item.path"
-              class="flex items-center transition-all p-2 pr-8 text-base text-gray-900 rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-300/30"
-              :class="{ 'bg-neutral-300/20 ': $route.meta.title == item.label }"
+              class=" flex items-center transition-all p-2 pr-8 text-base text-amber-900 rounded-md dark:text-white hover:bg-amber-100 dark:hover:bg-amber-300/30"
+              :class="{ 'bg-amber-400/20 ': $route.meta.title == item.label }"
             >
               <svg
-                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                class=" w-6 h-6 text-amber-500 transition duration-75 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ export default {
             </router-link>
           </li>
         </ul>
-        <div class="border-t mt-8 mb-8 border-gray-200 dark:border-neutral-700 "></div>
+        <div class="border-t mt-8 mb-8 border-amber-200 dark:border-neutral-700 "></div>
         <ul
           class="space-y-3 p-2 "
         >
@@ -60,11 +60,11 @@ export default {
           <li v-for="item in menuSistemas" :key="item.path">
             <router-link
               :to="item.path"
-              class="flex items-center transition-all p-2 pr-8 text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-300/30"
-              :class="{ 'bg-neutral-300/20 ': $route.meta.title == item.label }"
+              class="flex items-center transition-all p-2 pr-8 text-amber-900 rounded dark:text-white hover:bg-amber-100 dark:hover:bg-amber-300/30"
+              :class="{ 'bg-amber-400/20 ': $route.meta.title == item.label }"
             >
               <svg
-                class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                class="w-6 h-6 text-amber-500 transition duration-75 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
