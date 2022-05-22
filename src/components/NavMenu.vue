@@ -25,7 +25,7 @@ export default {
       <router-link
         :to="item.path"
         class="p-1 px-4 rounded"
-        :class="[{ 'bg-zinc-600': $route.meta.title == item.label }]"
+        :class="[{ ' bg-amber-400/30 hover:bg-amber-100 dark:hover:bg-amber-400/50': $route.meta.title == item.label }]"
         >{{ item.label }}</router-link
       >
     </div>
