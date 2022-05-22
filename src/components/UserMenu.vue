@@ -16,7 +16,7 @@ export default {
   <button
     id="dropdownDefault"
     @click="showMenu = !showMenu"
-    class="text-white focus:ring-0 focus:outline-none font-medium rounded-full p-1 text-sm dark:bg-neutral-600 dark:hover:bg-neutral-700"
+    class="text-gray-300 focus:ring-0 focus:outline-none font-medium rounded-full p-1 text-sm dark:bg-neutral-600 dark:hover:bg-amber-400/20"
     type="button"
   >
     <svg
@@ -40,34 +40,34 @@ export default {
     class="z-10 absolute right-2 mt-2  bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-neutral-700"
   >
     <ul
-      class="py-1 text-sm text-gray-700 dark:text-gray-200"
+      class="py-1 text-sm text-gray-700 dark:text-amber-200"
       aria-labelledby="dropdownDefault"
     >
       <li>
         <a
           href="#"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
           >Dashboard</a
         >
       </li>
       <li>
         <a
           href="#"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
           >Settings</a
         >
       </li>
       <li>
         <a
           href="#"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
           >Earnings</a
         >
       </li>
       <li>
         <a
           href="#"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
           >Sign out</a
         >
       </li>
