@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import Title from "@components/Title.vue";
 import Input from "@components/Input.vue";
 import TableUrls from "@components/TableUrls.vue";

@@ -1,10 +1,14 @@
+import { Logger } from "./logger.service";
+
 export class ApiService {
+  api_url: string = import.meta.env.VITE_APP_API_URL;
+  logger: Logger = new Logger();
   constructor() {
-    this.urlBase = process.env.VUE_APP_API_URL;
   }
 
-  async get(url) {
-    return await fetch(`${this.urlBase}${url}`, {
+  async get(url: string) {
+    this.logger.log("API|Get")
+    return await fetch(`${this.api_url}${url}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -18,8 +22,8 @@ export class ApiService {
       });
   }
 
-  async post(url, request) {
-    return await fetch(`${this.urlBase}${url}`, {
+  async post(url: string, request: any) {
+    return await fetch(`${this.api_url}${url}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -37,8 +41,8 @@ export class ApiService {
       });
   }
 
-  async delete(url, request) {
-    return await fetch(`${this.urlBase}${url}`, {
+  async delete(url: string, request: any) {
+    return await fetch(`${this.api_url}${url}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -56,8 +60,8 @@ export class ApiService {
       });
   }
 
-  async blob(url) {
-    return await fetch(`${this.urlBase}${url}`, {
+  async blob(url: string) {
+    return await fetch(`${this.api_url}${url}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -73,10 +77,10 @@ export class ApiService {
       });
   }
 
-  handleErrors(response) {
+  handleErrors(response: any) {
     if (response.status == 401) {
       localStorage.removeItem("TOKEN");
-      window.location = "/";
+      // window.location = "/";
     }
     //TODO: Tratar error
     // if (!response.ok) {
