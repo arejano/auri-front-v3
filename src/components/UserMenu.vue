@@ -1,13 +1,22 @@
-<script lang="ts">
+<script>
 import { ref, toRefs } from "vue";
+import Session from "@services/session.service";
 
 export default {
-  setup() {
-    let showMenu = ref(true);
-
+  data() {
     return {
-      showMenu,
+      showMenu: false,
+      session: new Session(),
     };
+  },
+  methods: {
+    async logout() {
+      await this.session.logout().then((response) => {
+        if (response.isSuccess) {
+          this.$router.push({ path: "/login" });
+        }
+      });
+    },
   },
 };
 </script>
@@ -37,7 +46,7 @@ export default {
   <!-- Dropdown menu -->
   <div
     v-if="showMenu"
-    class="z-10 absolute right-2 mt-2  bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-neutral-700"
+    class="z-10 absolute right-2 mt-2 bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-neutral-700"
   >
     <ul
       class="py-1 text-sm text-gray-700 dark:text-amber-200"
@@ -66,6 +75,7 @@ export default {
       </li>
       <li>
         <a
+          @click="logout()"
           href="#"
           class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
           >Sign out</a

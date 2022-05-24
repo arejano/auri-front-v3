@@ -14,9 +14,11 @@ import Integracoes from "@views/Integracoes.vue";
 import Importacoes from "@views/Importacoes.vue";
 import NotFound from "@views/NotFound.vue";
 
+import Login from "@views/Login.vue"
+
 /** @type {import('vue-router').RouterOptions['routes']} */
 const routes = [
-  { path: "/login", component: Home, meta: { title: "Login" } },
+  { path: "/login", component: Login, meta: { title: "Login" } },
   { path: "/", component: Home, meta: { title: "Home" } },
   { path: "/dashboard", component: Dashboard, meta: { title: "Dashboard" } },
   {

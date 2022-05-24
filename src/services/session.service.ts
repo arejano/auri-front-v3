@@ -1,14 +1,27 @@
+import { User } from "@/models/User";
 import { ApiService } from "./core/api";
+import { Store } from "./core/store";
+import { Logger } from "./core/logger.service";
+import { LoginModel } from "@/models/login.model";
 
-class LoginService {
-  constructor(private api: ApiService) {}
+export default class LoginService {
+  store: Store;
+  api: ApiService;
+  logger: Logger = new Logger();
 
-  async login(request) {
+  constructor() {
+    this.store = new Store();
+    this.api = new ApiService();
+  }
+
+  async login(request: LoginModel) {
     let ret = undefined;
+
     if (this.isLogged()) {
       return {
         type: "success",
         isLogged: true,
+        isSuccess:true,
       };
     }
 
@@ -21,12 +34,19 @@ class LoginService {
       await this.api.post("/login", request).then((response) => {
         if (response.token_type == "Bearer") {
           ret = {
-            type: "success",
+            isSuccess:true,
             message: "Usuário logado com sucesso!",
             token: response.access_token,
           };
+
+          //Save user in localStorage
+          const user: User = {
+            token: response.access_token,
+          };
+
+          this.store.saveUser(user);
         } else {
-          ret = { type: "error", message: response.message };
+          ret = { isSuccess: false, message: response.message };
         }
       });
     }
@@ -34,37 +54,24 @@ class LoginService {
   }
 
   async logout() {
-    return await this.api.get("/logout").then((response) => response);
+    this.store.clear();
+    return {
+      isSuccess:true,
+    }
   }
 
   isLogged() {
+    const user = this.store.getUser();
+    if (user == null) {
+      return false;
+    }
     return true;
   }
 
-  storeLoginToken(response) {
-    // this.$store.dispatch("auth/login", response).then((response) => {
-    //   if (response.type === "success") {
-    //     this.$router.push({ name: "Home" }).catch();
-    //   }
-    //   this.$snotify[response.type](response.message);
-    // });
-  }
-
-  getLoginToken() {
-    // this.$store.dispatch("auth/login", this.request).then((response) => {
-    //   if (response.type === "success") {
-    //     this.$router.push({ name: "Home" }).catch();
-    //   }
-    //   this.$snotify[response.type](response.message);
-    // });
-  }
-
-  validarLoginForm(request) {
+  validarLoginForm(request: any) {
     if (!request.email || !request.password) {
       return false;
     }
     return true;
   }
 }
-
-export default LoginService;
