@@ -154,6 +154,6 @@ export default {
   </form>
 
   <Loading v-if="loading" />
-  <TableUrls v-if="data.length !== 0" :data="data" class="mb-32 mt-12" />
-  <Pagination v-if="!loading"  class="mt-4 mb-4"  />
+  <TableUrls v-if="data.length !== 0" :data="data" class="mt-12" />
+  <Pagination v-if="!loading"  class="mt-6 mb-12"  />
 </template>
