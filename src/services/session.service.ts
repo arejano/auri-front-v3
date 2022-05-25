@@ -1,6 +1,6 @@
 import { User } from "@/models/User";
-import { ApiService } from "./core/api";
-import { Store } from "./core/store";
+import { ApiService } from "./core/api.service";
+import { Store } from "./core/store.service";
 import { Logger } from "./core/logger.service";
 import { LoginModel } from "@/models/login.model";
 
@@ -31,7 +31,7 @@ export default class LoginService {
         message: "Por favor, preencha todos os campos!",
       };
     } else {
-      await this.api.post("/login", request).then((response) => {
+      await this.api.postWithOutLogin("/login", request).then((response) => {
         if (response.token_type == "Bearer") {
           ret = {
             isSuccess:true,

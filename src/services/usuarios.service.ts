@@ -1,4 +1,4 @@
-import { ApiService } from "./core/api";
+import { ApiService } from "./core/api.service";
 
 class UserService {
   constructor(private api: ApiService) {}

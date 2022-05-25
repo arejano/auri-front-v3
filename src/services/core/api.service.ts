@@ -1,18 +1,33 @@
 import { Logger } from "./logger.service";
+import { Store } from "@core/store.service";
 
 export class ApiService {
   api_url: string = import.meta.env.VITE_APP_API_URL;
   logger: Logger = new Logger();
-  constructor() {
-  }
+  store: Store = new Store();
+  constructor() {}
 
   async get(url: string) {
-    this.logger.log("API|Get")
     return await fetch(`${this.api_url}${url}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
         Authorization: this.getAuthToken(),
+        "X-CSRF-TOKEN": "",
+      },
+    })
+      .then(this.handleErrors)
+      .then((response) => {
+        return response.json();
+      });
+  }
+
+  async getWithOutLogin(url: string) {
+    return await fetch(`${this.api_url}${url}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: undefined,
         "X-CSRF-TOKEN": "",
       },
     })
@@ -41,6 +56,40 @@ export class ApiService {
       });
   }
 
+  async simplePost(url: string) {
+    return await fetch(`${this.api_url}${url}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: this.getAuthToken(),
+        "X-CSRF-TOKEN": "",
+      },
+      method: "POST",
+    })
+      .then(this.handleErrors)
+      .then((response) => {
+        return response.json();
+      });
+  }
+
+  async postWithOutLogin(url: string, request: any) {
+    return await fetch(`${this.api_url}${url}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: undefined,
+        "X-CSRF-TOKEN": "",
+      },
+      method: "POST",
+      // TODO: Rever
+      // mode: "no-cors",
+      body: JSON.stringify(request),
+    })
+      .then(this.handleErrors)
+      .then((response) => {
+        return response.json();
+      });
+  }
   async delete(url: string, request: any) {
     return await fetch(`${this.api_url}${url}`, {
       headers: {
@@ -90,8 +139,9 @@ export class ApiService {
   }
 
   getAuthToken() {
-    const token = localStorage.getItem("TOKEN");
-    if (token !== undefined) {
+    const user = this.store.getUser();
+    if (user !== undefined) {
+      const token = user.token.split("|")[1];
       return `Bearer ${token}`;
     } else {
       throw new Error("Token Invalido");

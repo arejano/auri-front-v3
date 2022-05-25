@@ -1,15 +1,19 @@
-import { ApiService } from "./core/api";
+import { ApiService } from "./core/api.service";
 
 export class LeadsService {
-  constructor(private api: ApiService) {}
+  api: ApiService;
 
-  async get() {
-    const response = await this.api.get("/client/leads");
+  constructor() {
+    this.api = new ApiService();
+  }
+
+  async get(request: any) {
+    const response = await this.api.get(`/client/leads?page=${request.page}`);
     return response.data;
   }
 
   async filter(query: string) {
-    const response = await this.api.get(`/client/leads?quer=${query}`);
+    const response = await this.api.get(`/client/leads?query=${query}`);
     return response.data;
   }
 

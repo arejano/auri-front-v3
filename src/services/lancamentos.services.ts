@@ -1,4 +1,4 @@
-import { ApiService } from "./core/api";
+import { ApiService } from "./core/api.service";
 
 export class LancamentosService {
   constructor(private api: ApiService) {}

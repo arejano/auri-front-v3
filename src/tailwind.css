@@ -17,3 +17,24 @@
 .icon-nav-minimal:hover{
   @apply text-yellow-400/50 bg-gradient-to-r from-yellow-200/20 to-yellow-50/10 border-l border-yellow-400 rounded-r;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius:4px;
+  background: #404040;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

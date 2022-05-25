@@ -1,19 +1,21 @@
 <script lang="ts">
-import { toRefs } from "vue";
 export default {
   props: {
     label: String,
     placeholder: String,
     type: String,
+    value: {
+      type: String,
+      required: true,
+    },
   },
-
-  setup(props) {
-    const { label, placeholder, type } = toRefs(props);
-    return {
-      label,
-      placeholder,
-      type,
-    };
+  data() {
+    return {};
+  },
+  methods: {
+    onChange(event: any) {
+      this.$emit("change", event.target.value);
+    },
   },
 };
 </script>
@@ -25,10 +27,12 @@ export default {
       >{{ label }}</label
     >
     <input
+      @input="onChange"
       :type="type"
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-2.5 dark:bg-neutral-700/60 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
       :placeholder="placeholder"
-      required=""
+      :name="name"
+      :value="value"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-2.5 dark:bg-neutral-700/60 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
     />
   </div>
 </template>

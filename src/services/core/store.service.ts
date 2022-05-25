@@ -12,7 +12,7 @@ export class Store{
   }
 
   getToken(){
-    return this.getUser().token;
+    return this.getUser().token.split('|')[1];
   }
 
   clear(){
