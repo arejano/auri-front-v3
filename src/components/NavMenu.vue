@@ -21,13 +21,25 @@ export default {
 
 <template>
   <div class="flex select-none whitespace-nowrap space-x-6 mb-6">
-    <div v-for="item in menu" :key="item.label">
-      <router-link
-        :to="item.path"
-        class="p-1 px-4 rounded"
-        :class="[{ ' bg-amber-400/30 hover:bg-amber-100 dark:hover:bg-amber-400/50': $route.meta.title == item.label }]"
-        >{{ item.label }}</router-link
-      >
+    <div
+      class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700"
+    >
+      <ul class="flex flex-wrap -mb-px">
+        <li v-for="item in menu" :key="item.label" class="mr-2">
+          <router-link
+            href="#"
+            :to="item.path"
+            class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-amber-600 hover:border-amber-300 dark:hover:text-amber-300"
+            :class="[
+              {
+                ' hover:border-gray-700 inline-block p-4 text-amber-600 rounded-t-lg border-b-2 border-amber-600 active dark:text-amber-500 dark:border-amber-500':
+                  $route.meta.title == item.label,
+              },
+            ]"
+            >{{ item.label }}
+          </router-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>

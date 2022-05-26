@@ -25,13 +25,16 @@ export default {
     async login() {
       this.loading = true;
       const request = {
-        //        email: this.user,
-        //        password: this.password,
+        email: this.user,
+        password: this.password,
+      };
+
+      const defLogin = {
         email: "duda@lets.com.vc",
         password: "12345678",
       };
 
-      await this.session.login(request).then((response) => {
+      await this.session.login(defLogin).then((response) => {
         if (response.isSuccess) {
           this.loading = false;
           this.$router.push({ path: "/perfil" });
