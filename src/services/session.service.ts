@@ -53,7 +53,7 @@ export default class LoginService {
     return ret;
   }
 
-  async logout() {
+  logout() {
     this.store.clear();
     return {
       isSuccess:true,

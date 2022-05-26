@@ -1,11 +1,12 @@
-<script>
-import { ref, toRefs } from "vue";
+<script lang="ts">
+import { ref } from "vue";
 import Session from "@services/session.service";
+import { Store } from "@services/core/store.service";
+import { useRouter } from "vue-router";
 
 export default {
   data() {
     return {
-      showMenu: false,
       session: new Session(),
     };
   },
@@ -18,13 +19,73 @@ export default {
       });
     },
   },
+
+  setup() {
+    const showDropdow = ref(false);
+    const changeDropDown = () => {
+      showDropdow.value = !showDropdow.value;
+    };
+
+    const router = useRouter();
+    const store = new Store();
+
+    const menus = [
+      {
+        label: "Alterar Conta",
+        action: () => {
+          console.log("Alterando Conta");
+        },
+      },
+      {
+        label: "Pefil",
+        action: () => {
+          router.push({ path: "/perfil" });
+        },
+      },
+
+      {
+        label: "Minha conta",
+        action: (x) => {
+          router.push({ path: "/perfil/conta" });
+        },
+      },
+
+      {
+        label: "Usuários",
+        action: () => {
+          router.push({ path: "/perfil/usuarios" });
+        },
+      },
+
+      {
+        label: "Auditoria",
+        action: (x) => {
+          router.push({ path: "/perfil" });
+        },
+      },
+
+      {
+        label: "Sair",
+        action: (x) => {
+          store.clear();
+          router.push({ path: "/login" });
+        },
+      },
+    ];
+
+    return {
+      showDropdow,
+      changeDropDown,
+      menus,
+    };
+  },
 };
 </script>
 
 <template>
   <button
     id="dropdownDefault"
-    @click="showMenu = !showMenu"
+    @click="changeDropDown"
     class="text-gray-300 focus:ring-0 focus:outline-none font-medium rounded-full p-1 text-sm dark:bg-neutral-600 dark:hover:bg-amber-400/20"
     type="button"
   >
@@ -45,40 +106,20 @@ export default {
   </button>
   <!-- Dropdown menu -->
   <div
-    v-if="showMenu"
+    v-click-outside="changeDropDown"
+    v-if="showDropdow"
     class="z-10 absolute right-2 mt-2 bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-neutral-700"
   >
     <ul
       class="py-1 text-sm text-gray-700 dark:text-amber-200"
       aria-labelledby="dropdownDefault"
     >
-      <li>
+      <li v-for="menu in menus" :key="menu.label">
         <a
           href="#"
+          @click="menu.action"
           class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
-          >Dashboard</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
-          >Settings</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
-          >Earnings</a
-        >
-      </li>
-      <li>
-        <a
-          @click="logout()"
-          href="#"
-          class="text-gray-300 block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-400/20 dark:hover:text-amber-400"
-          >Sign out</a
+          >{{ menu.label }}</a
         >
       </li>
     </ul>
