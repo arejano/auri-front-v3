@@ -1,6 +1,7 @@
 <script>
 import Title from "@components/Title.vue";
 import Input from "@components/Input.vue";
+import Button from "@components/Button.vue";
 import TableUrls from "@components/TableUrls.vue";
 import Loading from "@components/Loading.vue";
 import Pagination from "@components/Pagination.vue";
@@ -12,7 +13,8 @@ export default {
     Input,
     TableUrls,
     Loading,
-    Pagination
+    Pagination,
+    Button,
   },
   data() {
     return {
@@ -53,7 +55,7 @@ export default {
       this.saving = true;
       await this.service.create(this.newData).then((result) => {
         if (result !== undefined) {
-          this.limpaForm();
+          //this.limpaForm();
           this.saving = false;
         }
       });
@@ -88,7 +90,7 @@ export default {
 <template class="">
   <Title title="Criador URL" subtitle="Crie aqui sua URL" />
   <form class="mt-6">
-    <div>
+    <div class="items-center">
       <Input
         :value="newData.url"
         label="Url"
@@ -113,7 +115,7 @@ export default {
         @input="newData.source = $event.target.value"
       />
     </div>
-    <div class="flex gap-4 justify-between">
+    <div class="flex gap-4 justify-between items-center">
       <Input
         :value="newData.medium"
         label="Medium"
@@ -137,23 +139,17 @@ export default {
       />
     </div>
     <div class="flex justify-end">
-      <button
-        :disabled="!validaForm()"
-        type="button"
-        @click="save"
-        class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-neutral-900 focus:outline-none bg-white rounded-lg border border-neutral-200 hover:bg-neutral-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-neutral-200 dark:focus:ring-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:border-neutral-600 dark:hover:text-amber-400 dark:hover:bg-amber-400/20"
-        :class="{ 'cursor-not-allowed': !validaForm() }"
-      >
-        <Loading small v-if="saving" />
-
-        <div v-if="!saving">
-          <span>Novo</span>
-        </div>
-      </button>
+      <Button
+        class="w-32"
+        @click.native="save"
+        :invalid="!validaForm()"
+        :loading="saving"
+        label="Novo"
+      />
     </div>
   </form>
 
   <Loading v-if="loading" />
   <TableUrls v-if="data.length !== 0" :data="data" class="mt-12" />
-  <Pagination v-if="!loading"  class="mt-6 mb-12"  />
+  <Pagination v-if="!loading" class="mt-6 mb-12" />
 </template>

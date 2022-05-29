@@ -4,6 +4,8 @@ import TableLeads from "@components/TableLeads.vue";
 import Pagination from "@components/Pagination.vue";
 import Loading from "@components/Loading.vue";
 import { LeadsService } from "@services/leads.service";
+import Input from "@components/Input.vue";
+import Button from "@components/Button.vue";
 
 export default {
   components: {
@@ -11,12 +13,16 @@ export default {
     TableLeads,
     Pagination,
     Loading,
+    Button,
+    Input,
   },
   data() {
     return {
       loading: false,
+      searching: false,
       leads: [],
       leadsService: new LeadsService(),
+      search: "",
       pagination: {
         current_page: 1,
         total: 0,
@@ -30,16 +36,16 @@ export default {
         page: this.pagination.current_page,
       };
       await this.leadsService.get(request).then((response) => {
-          this.leads = response;
-          this.loading = false;
+        this.leads = response;
+        this.loading = false;
       });
     },
     async filterData() {
-      const query = "";
-      this.leads = await this.leadsService.filter(query);
-    },
-    leadsEnabled() {
-      return true;
+      this.searching = true;
+      await this.leadsService.filter(this.search).then((response) => {
+        this.leads = response;
+        this.searching = false;
+      });
     },
   },
   created: function () {
@@ -51,6 +57,28 @@ export default {
 <template class="">
   <Title title="Leads" subtitle="Acompanhe cada lead de forma individual" />
   <Loading v-if="loading" />
+  <div v-if="!loading" class="py-2 mt-4">
+    <div class="flex justify-between">
+      <div class="flex gap-4">
+        <Input
+          class="w-64"
+          :value="search"
+          type="text"
+          placeholder="Search e-email"
+          @input="search = $event.target.value"
+          @keydown.enter="filterData()"
+        />
+        <Button
+          @click.native="filterData()"
+          class="w-24"
+          label="Search"
+          :loading="searching"
+        />
+      </div>
+      <Button class="w-32" label="Exportar" :loading="loading" />
+    </div>
+  </div>
+
   <TableLeads v-if="!loading" :leads="leads" />
-  <Pagination v-if="!loading" class="mt-4" />
+  <Pagination v-if="leads.length !== 0" class="mt-4" />
 </template>

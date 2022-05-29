@@ -139,9 +139,8 @@ export class ApiService {
   }
 
   getAuthToken() {
-    const user = this.store.getUser();
-    if (user !== undefined) {
-      const token = user.token.split("|")[1];
+    const token = this.store.getToken();
+    if (token !== undefined) {
       return `Bearer ${token}`;
     } else {
       throw new Error("Token Invalido");

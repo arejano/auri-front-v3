@@ -29,7 +29,8 @@ export default {
   <div
     class="bg-white h-full text-neutral-900 dark:text-zinc-100 dark:bg-neutral-900"
   >
-    <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" />
+    <!-- <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" /> -->
+    <NavMenu v-if="$route.meta.title !== 'Login'" />
     <div class="flex h-full">
       <Sidebar v-if="type.normal && $route.meta.title !== 'Login'" />
       <main class="p-10 overflow-auto h-full w-full">

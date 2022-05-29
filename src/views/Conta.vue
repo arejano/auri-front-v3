@@ -1,59 +1,63 @@
 <script lang="ts">
 import NavMenu from "@components/NavMenu.vue";
+import Input from "@components/Input.vue";
+import PerfilService from "@services/perfil.service.ts";
+import { User } from "@/models/User";
+import Loading from "@components/Loading.vue";
 
 export default {
   components: {
     NavMenu,
+    Input,
+    Loading,
   },
+  data() {
+    return {
+      loading: false,
+      perfilService: PerfilService,
+      profile: {},
+    };
+  },
+  async created() {
+    this.loading = true;
+    await this.perfilService.get().then((response: User) => {
+      this.profile = response;
+      this.loading = false;
+    });
+  },
+  methods: {
+    },
 };
 </script>
 
 <template>
   <NavMenu />
-  <form>
+  <Loading v-if="loading" />
+  <form v-if="!loading">
     <div class="mb-6">
-      <label
-        for="email"
-        class="block mb-2 text-sm font-medium text-neutral-900 dark:text-neutral-300"
-        >
-        Idenfiticador da Conta (ID)</label
-      >
-      <input
+      <Input
+        disabled
+        label="Idenfiticador da Conta (ID)"
+        :value="profile.id"
         type="text"
-        id="idconta"
-        class="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-2.5 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
         placeholder="Identificador da Conta"
-        required=""
+        @input="user = $event.target.value"
       />
-    </div>
-    <div class="mb-6">
-      <label
-        for="password"
-        class="block mb-2 text-sm font-medium text-neutral-900 dark:text-neutral-300"
-      >
-        Tipo de conta</label
-      >
-      <input
+      <Input
+        disabled
+        label="Tipo de conta"
+        :value="profile.has_accounts"
         type="text"
         placeholder="Tipo de conta"
-        id="password"
-        class="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-2.5 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
-        required=""
+        @input="user = $event.target.value"
       />
-    </div>
-
-    <div class="mb-6">
-      <label
-        for="valor"
-        class="block mb-2 text-sm font-medium text-neutral-900 dark:text-neutral-300"
-        >Nome da conta</label
-      >
-      <input
+      <Input
+        disabled
+        label="Nome da conta"
+        :value="profile.user_name"
         type="text"
         placeholder="Nome da conta"
-        id="password"
-        class="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-2.5 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
-        required=""
+        @input="user = $event.target.value"
       />
     </div>
   </form>
