@@ -2,7 +2,7 @@
 export default {
   components: {},
   props: {
-    leads: [],
+    data: [],
   },
   data() {
     return {};
@@ -12,11 +12,11 @@ export default {
 
 <template>
   <div class="relative overflow-x-auto rounded-t rounder-md">
-    <div v-if="leads.length === 0" class="p-10 flex justify-center">
+    <div v-if="data.length === 0" class="p-10 flex justify-center">
       <span>Nenhum dado para a pesquisa informada.</span>
     </div>
     <table
-      v-if="leads.length !== 0"
+      v-if="data.length !== 0"
       class="w-full text-sm text-left text-neutral-500 dark:text-neutral-400"
     >
       <thead
@@ -33,15 +33,15 @@ export default {
               <label for="checkbox-all-search" class="sr-only">checkbox</label>
             </div>
           </th>
-          <th scope="col" class="px-6 py-3">Lead</th>
+          <th scope="col" class="px-6 py-3">leads</th>
           <th scope="col" class="px-6 py-3"></th>
           <th scope="col" class="px-6 py-3"></th>
         </tr>
       </thead>
       <tbody>
         <tr
-          v-for="lead in leads"
-          :key="lead.id"
+          v-for="item in data"
+          :key="item.id"
           class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-700/80"
         >
           <td class="w-4 p-4">
@@ -58,13 +58,13 @@ export default {
             scope="row"
             class="px-6 py-4 font-medium text-neutral-900 dark:text-white whitespace-nowrap"
           >
-            {{ lead.id }}
+            {{ item.id }}
           </th>
           <th
             scope="row"
             class="px-6 py-4 font-medium text-neutral-900 dark:text-white whitespace-nowrap"
           >
-            {{ lead.email }}
+            {{ item.email }}
           </th>
           <td class="flex justify-between px-4 py-4 text-right">
             <a

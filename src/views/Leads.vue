@@ -20,7 +20,7 @@ export default {
     return {
       loading: false,
       searching: false,
-      leads: [],
+      data: [],
       leadsService: new LeadsService(),
       search: "",
       pagination: {
@@ -36,14 +36,14 @@ export default {
         page: this.pagination.current_page,
       };
       await this.leadsService.get(request).then((response) => {
-        this.leads = response;
+        this.data = response;
         this.loading = false;
       });
     },
     async filterData() {
       this.searching = true;
       await this.leadsService.filter(this.search).then((response) => {
-        this.leads = response;
+        this.data = response;
         this.searching = false;
       });
     },
@@ -79,6 +79,6 @@ export default {
     </div>
   </div>
 
-  <TableLeads v-if="!loading" :leads="leads" />
-  <Pagination v-if="leads.length !== 0" class="mt-4" />
+  <TableLeads v-if="!loading" :data="data" />
+  <Pagination v-if="data.length !== 0" class="mt-4" />
 </template>
