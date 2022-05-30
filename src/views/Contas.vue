@@ -1,9 +1,9 @@
 <script>
 import Title from "@components/Title.vue";
-import TableLeads from "@components/TableLeads.vue";
+import TableContas from "@components/TableContas.vue";
 import Pagination from "@components/Pagination.vue";
-import Loading from "@components/Loading.vue";
-import { ContasService } from "@services/contas.service"
+import Skeleton from "@components/Skeleton.vue";
+import { SubAccountsService } from "@services/subcontas.service";
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
 import NavMenu from "@components/NavMenu.vue";
@@ -11,19 +11,19 @@ import NavMenu from "@components/NavMenu.vue";
 export default {
   components: {
     Title,
-    TableLeads,
+    TableContas,
     Pagination,
-    Loading,
+    Skeleton,
     Button,
     Input,
-    NavMenu
+    NavMenu,
   },
   data() {
     return {
       loading: false,
       searching: false,
       contas: [],
-      contasService: new ContasService(),
+      contasService: new SubAccountsService(),
       search: "",
       pagination: {
         current_page: 1,
@@ -37,16 +37,9 @@ export default {
       const request = {
         page: this.pagination.current_page,
       };
-      await this.contasService.get(request).then((response) => {
+      await this.contasService.getSubAccounts(request).then((response) => {
         this.contas = response;
         this.loading = false;
-      });
-    },
-    async filterData() {
-      this.searching = true;
-      await this.contasService.filter(this.search).then((response) => {
-        this.contas = response;
-        this.searching = false;
       });
     },
   },
@@ -58,7 +51,7 @@ export default {
 
 <template class="">
   <NavMenu />
-  <Loading v-if="loading" />
+  <Skeleton v-if="loading" />
   <div v-if="!loading" class="py-2 mt-4">
     <div class="flex justify-between">
       <div class="flex gap-4">
@@ -68,6 +61,6 @@ export default {
     </div>
   </div>
 
-  <TableLeads v-if="!loading" :data="contas" />
+  <TableContas v-if="!loading" :data="contas" />
   <Pagination v-if="contas.length !== 0" class="mt-4" />
 </template>

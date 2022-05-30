@@ -36,6 +36,7 @@ export default {
       <main class="p-10 overflow-auto h-full flex justify-center w-full">
         <div class="w-full" style="max-width: 1366px">
           <router-view></router-view>
+          <div class="h-24"></div>
         </div>
       </main>
     </div>

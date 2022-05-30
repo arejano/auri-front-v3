@@ -56,7 +56,6 @@ export default {
       </div>
       <div class="flex flex-col space-y-2">
         <Input
-          required
           autofocus
           label="E-mail"
           :value="user"
@@ -65,7 +64,6 @@ export default {
           @input="user = $event.target.value"
         />
         <Input
-          required
           label="Senha"
           :value="password"
           type="password"

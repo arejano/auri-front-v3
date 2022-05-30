@@ -3,13 +3,13 @@ import NavMenu from "@components/NavMenu.vue";
 import Input from "@components/Input.vue";
 import PerfilService from "@services/perfil.service.ts";
 import { User } from "@/models/User";
-import Loading from "@components/Loading.vue";
+import Skeleton from "@components/Skeleton.vue";
 
 export default {
   components: {
     NavMenu,
     Input,
-    Loading
+    Skeleton
   },
   data() {
     return {
@@ -32,7 +32,7 @@ export default {
 
 <template>
   <NavMenu />
-  <Loading v-if="loading" />
+  <Skeleton v-if="loading" />
   <form v-if="!loading">
     <Input
       disabled
