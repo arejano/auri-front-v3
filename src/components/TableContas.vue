@@ -44,7 +44,7 @@ export default {
           <td class="flex justify-center items-center h-12">
             <a
               href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline dark:hover:bg-neutral-600 rounded p-2"
+              class="font-medium mt-1.5 text-amber-600 dark:text-neutral-300 hover:underline dark:hover:bg-neutral-600 rounded p-2"
             >
               <Delete width="20" height="20" />
             </a>

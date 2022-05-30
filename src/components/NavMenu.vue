@@ -22,7 +22,7 @@ export default {
 <template>
   <div class="flex select-none whitespace-nowrap space-x-6 mb-6">
     <div
-      class="text-sm font-medium w-full text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700"
+      class="text-sm font-bold w-full text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700"
     >
       <ul class="flex w-full -mb-px">
         <li v-for="item in menu" :key="item.label" class="mr-2 w-full">

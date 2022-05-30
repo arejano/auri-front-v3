@@ -14,6 +14,8 @@ import UnderConstruction from "@components/UnderConstruction.vue";
 // Import GlobalIcons
 import Search from "@components/icons/Search.vue";
 import Delete from "@components/icons/Delete.vue";
+import MenuToggle from "@components/icons/MenuToggle.vue";
+import Copy from "@components/icons/Copy.vue";
 
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
@@ -31,6 +33,8 @@ app.component("UnderConstruction", UnderConstruction);
 //Declare Global icons
 app.component("Search", Search);
 app.component("Delete", Delete);
+app.component("MenuToggle", MenuToggle);
+app.component("Copy", Copy);
 
 app.use(router);
 app.use(vClickOutside);

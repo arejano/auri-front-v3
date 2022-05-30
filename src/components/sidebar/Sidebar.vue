@@ -28,19 +28,23 @@ export default {
 <template>
   <aside class="select-none h-full" aria-label="Sidebar">
     <div
-      class="overflow-y-auto border-r border-neutral-200 dark:border-neutral-700/50 flex flex-col justify-between h-full py-4  bg-amber-50 dark:bg-neutral-500/10 shadow-lg "
+      class="overflow-y-auto border-r border-neutral-200 dark:border-neutral-700/50 flex flex-col justify-between h-full py-4 bg-amber-50 dark:bg-neutral-800 shadow-lg"
     >
       <div>
-        <!-- logo -->
+        <div class="flex mb-10 justify-center">
+          <router-link to="/">
+            <img src="../../assets/auri-texto.png" width="130" />
+          </router-link>
+        </div>
         <ul class="space-y-3 p-2">
           <li v-for="item in menu" :key="item.path">
             <router-link
               :to="item.path"
-              class=" flex items-center transition-all p-2 pr-8 text-base text-amber-900 rounded-md dark:text-white hover:bg-amber-100 dark:hover:bg-amber-300/30"
+              class="flex items-center transition-all p-2 pr-8 text-base text-amber-900 rounded-md dark:text-white hover:bg-amber-100 dark:hover:bg-amber-300/30"
               :class="{ 'bg-amber-400/20 ': $route.meta.title == item.label }"
             >
               <svg
-                class=" w-6 h-6 text-amber-500 transition duration-75 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-white"
+                class="w-6 h-6 text-amber-500 transition duration-75 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,11 +56,13 @@ export default {
             </router-link>
           </li>
         </ul>
-        <div class="border-t mt-8 mb-8 border-amber-200 dark:border-neutral-700 "></div>
-        <ul
-          class="space-y-3 p-2 "
-        >
-          <span class="p-2 font-bold text-black dark:text-zinc-500">Sistema</span>
+        <div
+          class="border-t mt-8 mb-8 border-amber-200 dark:border-neutral-700"
+        ></div>
+        <ul class="space-y-3 p-2">
+          <span class="p-2 font-bold text-black dark:text-zinc-500"
+            >Sistema</span
+          >
           <li v-for="item in menuSistemas" :key="item.path">
             <router-link
               :to="item.path"

@@ -57,7 +57,12 @@ export default {
       />
     </div>
     <div class="dark:bg-neutral-800 mt-10 flex flex-col rounded-md p-6">
-      <Title title="Código de rastreio (TAG)" />
+      <div class="flex justify-between">
+        <Title title="Código de rastreio (TAG)" />
+        <span class="dark:hover:bg-neutral-700 rounded-md h-10 flex items-center p-2 cursor-pointer">
+          <Copy width="24" height="24" />
+        </span>
+      </div>
       <code class="dark:bg-neutral-700 p-6 rounded-md">
         &lt;!-- Auri --&gt; <br />
         &lt;script&gt; <br />
