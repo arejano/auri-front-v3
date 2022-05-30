@@ -1,1 +1,3 @@
-<template>Configurações</template>
+<template>
+  <UnderConstruction />
+</template>
