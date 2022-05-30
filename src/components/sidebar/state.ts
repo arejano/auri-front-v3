@@ -13,7 +13,7 @@ export const sidebarWidth = computed(
 export const sidebarType = () => {
   return {
     topbar: window.innerWidth < 500,
-    minibar: window.innerWidth > 500 && window.innerWidth < 1024,
+    mini: window.innerWidth > 500 && window.innerWidth < 1024,
     normal: window.innerWidth > 1024,
   };
 };

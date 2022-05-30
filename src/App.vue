@@ -22,6 +22,16 @@ export default {
       type,
     };
   },
+  data() {
+    return {
+      showMenu: true,
+    };
+  },
+  methods: {
+    changeShowSidebar(event:Boolean) {
+      this.showMenu = event;
+    },
+  },
 };
 </script>
 
@@ -30,9 +40,16 @@ export default {
     class="bg-white h-full text-neutral-900 dark:text-zinc-100 dark:bg-neutral-900"
   >
     <!-- <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" /> -->
-    <NavMenu v-if="$route.meta.title !== 'Login'" />
+    <NavMenu
+      @menuToggle="changeShowSidebar($event)"
+      showMenu="showMenu"
+      v-if="$route.meta.title !== 'Login'"
+    />
     <div class="flex h-full">
-      <Sidebar v-if="type.normal && $route.meta.title !== 'Login'" />
+    {{type.mini}}
+      <div v-if="$route.meta.title !== 'Login'">
+        <Sidebar v-if="!type.mini" />
+      </div>
       <main class="p-10 overflow-auto h-full flex justify-center w-full">
         <div class="w-full" style="max-width: 1366px">
           <router-view></router-view>
