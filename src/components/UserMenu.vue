@@ -86,7 +86,7 @@ export default {
   <button
     id="dropdownDefault"
     @click="changeDropDown"
-    class="text-gray-300 focus:ring-0 focus:outline-none font-medium rounded-full p-1 text-sm dark:bg-neutral-600 dark:hover:bg-amber-400/20"
+    class="text-gray-300 focus:ring-0 focus:outline-none font-medium p-1 rounded-full text-sm dark:hover:bg-amber-400/20"
     type="button"
   >
     <svg

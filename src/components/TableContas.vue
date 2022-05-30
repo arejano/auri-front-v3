@@ -13,7 +13,6 @@ export default {
 
 <template>
   <div class="relative overflow-x-auto rounded-t rounder-md">
-    {{ data }}
     <div v-if="data.length === 0" class="p-10 flex justify-center">
       <span>Nenhum dado para a pesquisa informada.</span>
     </div>
@@ -26,17 +25,14 @@ export default {
       >
         <tr>
           <th scope="col" class="px-6 py-3">nome</th>
-          <th scope="col" class="px-6 py-3">email</th>
-          <th scope="col" class="px-6 py-3">administrador</th>
-          <th scope="col" class="px-6 py-3">status</th>
-          <th scope="col" class="px-6 py-3">ações</th>
+          <th scope="col" class="px-6 py-3 text-center">ações</th>
         </tr>
       </thead>
       <tbody>
         <tr
           v-for="item in data"
-          :key="item.jey"
-          class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-700/80"
+          :key="item.key"
+          class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 h-10  hover:bg-neutral-50 dark:hover:bg-neutral-700/80"
         >
           <th
             scope="row"
@@ -44,28 +40,13 @@ export default {
           >
             {{ item.label }}
           </th>
-          <th
-            scope="row"
-            class="px-6 py-4 font-medium text-neutral-900 dark:text-white whitespace-nowrap"
-          >
-            {{ item.email }}
-          </th>
-          <td class="flex justify-between px-4 py-4 text-right">
-            <a
-              href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline"
-              >Editar</a
-            >
 
+          <td class="flex justify-center items-center h-12">
             <a
               href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline"
-              >Excluir</a
+              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline dark:hover:bg-neutral-600 rounded p-2"
             >
-            <a
-              href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline"
-              >Analise Completa
+              <Delete width="20" height="20" />
             </a>
           </td>
         </tr>

@@ -75,7 +75,7 @@ export default {
         &lt;!-- End Auri --&gt;
       </code>
 
-      <p class="p-2">
+      <p class="p-2 mt-4">
         Copie todo o código acima e cole entre as tags &lt;head&gt; do seu site.
       </p>
       <p class="p-2">

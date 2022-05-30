@@ -9,6 +9,11 @@ import vClickOutside from "click-outside-vue3";
 import Title from "@components/Title.vue";
 import Section from "@components/Section.vue";
 import Skeleton from "@components/Skeleton.vue";
+import UnderConstruction from "@components/UnderConstruction.vue";
+
+// Import GlobalIcons
+import Search from "@components/icons/Search.vue";
+import Delete from "@components/icons/Delete.vue";
 
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
@@ -21,6 +26,11 @@ app.component("Section", Section);
 app.component("Skeleton", Skeleton);
 app.component("Input", Input);
 app.component("Button", Button);
+app.component("UnderConstruction", UnderConstruction);
+
+//Declare Global icons
+app.component("Search", Search);
+app.component("Delete", Delete);
 
 app.use(router);
 app.use(vClickOutside);
