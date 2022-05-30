@@ -2,20 +2,13 @@
 import Title from "@components/Title.vue";
 import TableContas from "@components/TableContas.vue";
 import Pagination from "@components/Pagination.vue";
-import Skeleton from "@components/Skeleton.vue";
 import { SubAccountsService } from "@services/subcontas.service";
-import Input from "@components/Input.vue";
-import Button from "@components/Button.vue";
 import NavMenu from "@components/NavMenu.vue";
 
 export default {
   components: {
-    Title,
     TableContas,
     Pagination,
-    Skeleton,
-    Button,
-    Input,
     NavMenu,
   },
   data() {

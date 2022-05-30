@@ -1,78 +1,61 @@
+<script lang="ts">
+export default {
+  name: "TableLancamentos",
+  components: {},
+  props: {
+    data: [],
+  },
+  data() {
+    return {};
+  },
+};
+</script>
+
 <template>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div class="">
     <div class="py-4">
       <div class="flex justify-between">
         <div class="w-full flex gap-8">
-        <span class="cursor-pointer">Ativos</span>
-        <span class="cursor-pointer">Arquivados</span>
+          <span class="cursor-pointer">Ativos</span>
+          <span class="cursor-pointer">Arquivados</span>
         </div>
-          <button
-            type="button"
-            class=" py-2.5 whitespace-nowrap px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-amber-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-amber-400 dark:hover:bg-amber-400/20"
-          >
-            Novo Lançamento
-          </button>
+        <Button label="Novo Lançamento" class="w-64" />
       </div>
     </div>
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+  </div>
+
+  <div class="relative rounded-t-md overflow-x-auto">
+    <table
+      v-if="data.length !== 0"
+      class="w-full text-sm text-left text-neutral-500 dark:text-neutral-400"
+    >
       <thead
-        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        class="text-md select-none text-neutral-500 uppercase bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200"
       >
         <tr>
-          <th scope="col" class="p-4">
-            <div class="flex items-center">
-              <input
-                id="checkbox-all-search"
-                type="checkbox"
-                class="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 rounded focus:ring-gray-500 dark:focus:ring-gray-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label for="checkbox-all-search" class="sr-only">checkbox</label>
-            </div>
-          </th>
-          <th scope="col" class="px-6 py-3">Lead</th>
-          <th scope="col" class="px-6 py-3">
-            <span class="sr-only">Edit</span>
-          </th>
+          <th scope="col" class="px-6 py-3">nome</th>
+          <th scope="col" class="px-6 py-3 text-center">ações</th>
         </tr>
       </thead>
       <tbody>
         <tr
-          class="bg-white border-b dark:bg-neutral-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-neutral-600"
+          v-for="item in data"
+          :key="item.key"
+          class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 h-10 hover:bg-neutral-50 dark:hover:bg-neutral-700/80"
         >
-          <td class="w-4 p-4">
-            <div class="flex items-center">
-              <input
-                id="checkbox-table-search-1"
-                type="checkbox"
-                class="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 rounded focus:ring-gray-500 dark:focus:ring-gray-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label for="checkbox-table-search-1" class="sr-only"
-                >checkbox</label
-              >
-            </div>
-          </td>
           <th
             scope="row"
-            class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+            class="px-6 py-4 font-medium text-neutral-900 dark:text-white whitespace-nowrap"
           >
-            Apple MacBook Pro 17"
+            {{ item.label }}
           </th>
-          <td class="flex justify-between px-4 py-4 text-right">
-            <a
-              href="#"
-              class="font-medium text-amber-600 dark:text-gray-300 hover:underline"
-              >Editar</a
-            >
 
+          <td class="flex justify-center items-center h-12">
             <a
               href="#"
-              class="font-medium text-amber-600 dark:text-gray-300 hover:underline "
-              >Excluir</a
+              class="font-medium mt-1.5 text-amber-600 dark:text-neutral-300 hover:underline dark:hover:bg-neutral-600 rounded p-2"
             >
-            <a
-              href="#"
-              class="font-medium text-amber-600 dark:text-gray-300 hover:underline"
-              >Analise Completa
+              <Delete width="20" height="20" />
             </a>
           </td>
         </tr>
