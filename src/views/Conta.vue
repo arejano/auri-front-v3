@@ -1,21 +1,11 @@
 <script lang="ts">
-import NavMenu from "@components/NavMenu.vue";
-import Input from "@components/Input.vue";
-import Title from "@components/Title.vue";
-import PerfilService from "@services/perfil.service.ts";
 import { User } from "@/models/User";
-import Loading from "@components/Loading.vue";
-import Section from "@components/Section.vue";
-import Skeleton from "@components/Skeleton.vue";
+import NavMenu from "@components/NavMenu.vue";
+import PerfilService from "@services/perfil.service.ts";
 
 export default {
   components: {
     NavMenu,
-    Input,
-    Loading,
-    Title,
-    Section,
-    Skeleton,
   },
   data() {
     return {
@@ -37,7 +27,8 @@ export default {
 
 <template>
   <NavMenu />
-  <Skeleton v-if="loading"/>
+  <Title class="mb-4" title="Dados da conta" />
+  <Skeleton v-if="loading" />
   <Section v-if="!loading">
     <div class="mb-6">
       <Input

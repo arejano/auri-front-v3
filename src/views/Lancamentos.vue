@@ -1,10 +1,8 @@
 <script lang="ts">
-import Title from "@components/Title.vue";
 import TableLancamentos from "@components/TableLancamentos.vue";
 
 export default {
   components: {
-    Title,
     TableLancamentos,
   },
   setup() {},

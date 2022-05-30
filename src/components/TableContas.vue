@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 export default {
   name: "TableContas",
   components: {},
@@ -13,6 +13,7 @@ export default {
 
 <template>
   <div class="relative overflow-x-auto rounded-t rounder-md">
+    {{ data }}
     <div v-if="data.length === 0" class="p-10 flex justify-center">
       <span>Nenhum dado para a pesquisa informada.</span>
     </div>
@@ -24,42 +25,24 @@ export default {
         class="text-md select-none text-neutral-500 uppercase bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200"
       >
         <tr>
-          <th scope="col" class="p-4">
-            <div class="flex items-center">
-              <input
-                id="checkbox-all-search"
-                type="checkbox"
-                class="w-4 h-4 text-neutral-600 bg-neutral-100 border-neutral-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600"
-              />
-              <label for="checkbox-all-search" class="sr-only">checkbox</label>
-            </div>
-          </th>
-          <th scope="col" class="px-6 py-3">leads</th>
-          <th scope="col" class="px-6 py-3"></th>
-          <th scope="col" class="px-6 py-3"></th>
+          <th scope="col" class="px-6 py-3">nome</th>
+          <th scope="col" class="px-6 py-3">email</th>
+          <th scope="col" class="px-6 py-3">administrador</th>
+          <th scope="col" class="px-6 py-3">status</th>
+          <th scope="col" class="px-6 py-3">ações</th>
         </tr>
       </thead>
       <tbody>
         <tr
           v-for="item in data"
-          :key="item.id"
+          :key="item.jey"
           class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-700/80"
         >
-          <td class="w-4 p-4">
-            <div class="flex items-center">
-              <input
-                id="checkbox-table-search-1"
-                type="checkbox"
-                class="w-4 h-4 text-neutral-600 bg-neutral-100 border-neutral-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600"
-              />
-              <label for="checkbox-table-search-1" class="sr-only"></label>
-            </div>
-          </td>
           <th
             scope="row"
             class="px-6 py-4 font-medium text-neutral-900 dark:text-white whitespace-nowrap"
           >
-            {{ item.id }}
+            {{ item.label }}
           </th>
           <th
             scope="row"

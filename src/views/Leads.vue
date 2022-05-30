@@ -1,20 +1,14 @@
 <script>
-import Title from "@components/Title.vue";
 import TableLeads from "@components/TableLeads.vue";
 import Pagination from "@components/Pagination.vue";
 import Loading from "@components/Loading.vue";
 import { LeadsService } from "@services/leads.service";
-import Input from "@components/Input.vue";
-import Button from "@components/Button.vue";
 
 export default {
   components: {
-    Title,
     TableLeads,
     Pagination,
     Loading,
-    Button,
-    Input,
   },
   data() {
     return {

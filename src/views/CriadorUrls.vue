@@ -1,7 +1,4 @@
 <script>
-import Title from "@components/Title.vue";
-import Input from "@components/Input.vue";
-import Button from "@components/Button.vue";
 import TableUrls from "@components/TableUrls.vue";
 import Loading from "@components/Loading.vue";
 import Pagination from "@components/Pagination.vue";
@@ -9,12 +6,9 @@ import { UrlsService } from "@services/urls.service";
 
 export default {
   components: {
-    Title,
-    Input,
     TableUrls,
     Loading,
     Pagination,
-    Button,
   },
   data() {
     return {
