@@ -24,31 +24,32 @@ export default {
   },
   data() {
     return {
-      showMenu: true,
+      showMenu: false,
     };
   },
   methods: {
-    changeShowSidebar(event:Boolean) {
+    toggleMenu(event:Boolean) {
       this.showMenu = event;
+      this.$refs.sidebar.toggle(this.showMenu);
     },
   },
+  computed: {},
 };
 </script>
 
 <template>
   <div
-    class="bg-white h-full text-neutral-900 dark:text-zinc-100 dark:bg-neutral-900"
+    class="bg-white h-full text-neutral-900 dark:text-zinc-100 bg-estranho"
   >
     <!-- <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" /> -->
     <NavMenu
-      @menuToggle="changeShowSidebar($event)"
+      @menuToggle="toggleMenu($event)"
       showMenu="showMenu"
       v-if="$route.meta.title !== 'Login'"
     />
     <div class="flex h-full">
-    {{type.mini}}
       <div v-if="$route.meta.title !== 'Login'">
-        <Sidebar v-if="!type.mini" />
+        <Sidebar ref="sidebar" show="showMenu" />
       </div>
       <main class="p-10 overflow-auto h-full flex justify-center w-full">
         <div class="w-full" style="max-width: 1366px">

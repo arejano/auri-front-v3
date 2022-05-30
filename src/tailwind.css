@@ -10,11 +10,11 @@
   @apply cursor-pointer hover:text-yellow-400/50 h-12 justify-center border-yellow-500/60 flex items-center;
 }
 
-.icon-nav-minimal-selected{
+.icon-nav-minimal-selected {
   @apply text-yellow-400/50 bg-gradient-to-r from-yellow-200/20 to-yellow-50/10 border-l border-yellow-400 rounded-r;
 }
 
-.icon-nav-minimal:hover{
+.icon-nav-minimal:hover {
   @apply text-yellow-400/50 bg-gradient-to-r from-yellow-200/20 to-yellow-50/10 border-l border-yellow-400 rounded-r;
 }
 
@@ -30,11 +30,20 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border-radius:4px;
+  border-radius: 4px;
   background: #404040;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.bg-estranho {
+  background-image: linear-gradient(
+    to top,
+    #353335,
+    #171717,
+    #171717
+  );
 }

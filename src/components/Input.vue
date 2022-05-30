@@ -73,7 +73,7 @@ export default {
       :value="value"
       :disabled="disabled"
       :autofocus="autofocus"
-      class="h-11 bg-neutral-50 border border-neutral-50 text-neutral-900 text-sm rounded-md block w-full p-2.5 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-neutral-800 dark:border-neutral-800 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
+      class="h-11 bg-neutral-50 border-t border-neutral-50 text-neutral-900 text-sm rounded-md block w-full p-2.5 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-neutral-800 dark:border-t-1 dark:border-neutral-700 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
       :class="{ 'dark:ring-2 dark:ring-red-600': !isValid }"
     />
   </div>

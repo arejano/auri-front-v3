@@ -22,11 +22,25 @@ export default {
       menuSistemas,
     };
   },
+  data() {
+    return {
+      small: false,
+    };
+  },
+  methods: {
+    toggle(value: Boolean) {
+    this.small = value;
+    },
+  },
 };
 </script>
 
 <template>
-  <aside class="select-none h-full" aria-label="Sidebar">
+  <aside
+    class="select-none h-full transition-all"
+    aria-label="Sidebar"
+    :class="{ 'w-12': small }"
+  >
     <div
       class="overflow-y-auto border-r border-neutral-200 dark:border-neutral-700/50 flex flex-col justify-between h-full py-4 bg-amber-50 dark:bg-neutral-800 shadow-lg"
     >
