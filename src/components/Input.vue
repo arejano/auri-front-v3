@@ -63,9 +63,8 @@ export default {
       >
       <span v-if="required" class="text-red-600">*</span>
     </div>
+    <div>
     <input
-      @focus="focus = !focus"
-      @focusout="focus = !focus"
       @input="onChange"
       :type="type"
       :placeholder="placeholder"
@@ -73,8 +72,10 @@ export default {
       :value="value"
       :disabled="disabled"
       :autofocus="autofocus"
-      class="h-11 bg-neutral-50 border-t border-neutral-50 text-neutral-900 text-sm rounded-md block w-full p-2.5 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-neutral-800 dark:border-t-1 dark:border-neutral-700 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
+      class="h-11 bg-neutral-50 dark:border-0 dark:border-t dark:border-neutral-700 text-neutral-900 text-sm rounded-md block w-full p-2.5 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-neutral-800  dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
       :class="{ 'dark:ring-2 dark:ring-red-600': !isValid }"
     />
   </div>
+  </div>
 </template>
+    <!-- class="w-full lg:flex items-center border-t border-slate-700 text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700" -->

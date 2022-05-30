@@ -38,7 +38,7 @@ export default {
   <button
     :disabled="invalid"
     type="button"
-    class="h-11 py-2.5 w-full px-5 text-sm font-medium text-neutral-900 focus:outline-none bg-neutral-700 rounded-md border border-neutral-200 hover:bg-neutral-100 hover:text-neutral-700 focus:z-10 focus:ring-4 focus:ring-neutral-200 dark:focus:ring-2 dark:focus:ring-neutral-500 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-700 dark:hover:text-white dark:hover:bg-neutral-600"
+    class="h-11 dark:border-0 dark:border-t dark:border-neutral-600 py-2.5 w-full px-5 text-sm font-medium text-neutral-900 focus:outline-none bg-neutral-700 rounded-md border border-neutral-200 hover:bg-neutral-100 hover:text-neutral-700 focus:z-10 focus:ring-4 focus:ring-neutral-200 dark:focus:ring-2 dark:focus:ring-neutral-500 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-700 dark:hover:text-white dark:hover:bg-neutral-600"
     :class="{ 'cursor-not-allowed': loading || invalid }"
   >
     <div v-if="loading" class="flex flex-row justify-center">
