@@ -16,6 +16,8 @@ import Search from "@components/icons/Search.vue";
 import Delete from "@components/icons/Delete.vue";
 import MenuToggle from "@components/icons/MenuToggle.vue";
 import Copy from "@components/icons/Copy.vue";
+import ChevronLeft from "@components/icons/ChevronLeft.vue";
+import ChevronDown from "@components/icons/ChevronDown.vue";
 
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
@@ -35,6 +37,8 @@ app.component("Search", Search);
 app.component("Delete", Delete);
 app.component("MenuToggle", MenuToggle);
 app.component("Copy", Copy);
+app.component("ChevronLeft", ChevronLeft);
+app.component("ChevronDown", ChevronDown);
 
 app.use(router);
 app.use(vClickOutside);

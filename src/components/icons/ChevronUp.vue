@@ -19,14 +19,14 @@ export default {
     aria-hidden="true"
     role="img"
     class="iconify iconify--heroicons-outline"
-    width="width"
-    height="height"
+    :width="width"
+    :height="height"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
   >
     <path
-      fill="fill"
-      stroke="stroke"
+      fill="none"
+      stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
