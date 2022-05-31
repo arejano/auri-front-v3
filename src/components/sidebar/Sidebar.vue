@@ -1,20 +1,38 @@
 <script lang="ts">
 import { ref } from "vue";
+import Delete from "@components/icons/Delete.vue";
+import Edit from "@components/icons/Edit.vue";
 
 export default {
   setup() {
     const menu = ref({
-      perfil: { label: "Perfil", path: "/perfil" },
-      dashboard: { label: "Dashboard", path: "/dashboard" },
-      lancamentos: { label: "Lançamentos", path: "/lancamentos" },
-      criadaorUrls: { label: "Criador de URLS", path: "/criador_urls" },
-      leads: { label: "Leads", path: "/leads" },
+      perfil: { label: "Perfil", path: "/perfil", icon: Edit },
+      dashboard: { label: "Dashboard", path: "/dashboard", icon: Edit },
+      lancamentos: { label: "Lançamentos", path: "/lancamentos", icon: Delete },
+      criadaorUrls: {
+        label: "Criador de URLS",
+        path: "/criador_urls",
+        icon: Delete,
+      },
+      leads: {
+        label: "Leads",
+        path: "/leads",
+        icon: Delete,
+      },
     });
 
     const menuSistemas = ref({
-      ajuda: { label: "Ajuda", path: "/ajuda" },
-      reportarErro: { label: "Reportar erro", path: "/reportar_erro" },
-      configuracoes: { label: "Configurações", path: "/configuracoes" },
+      ajuda: { label: "Ajuda", path: "/ajuda", icon: Delete },
+      reportarErro: {
+        label: "Reportar erro",
+        path: "/reportar_erro",
+        icon: Delete,
+      },
+      configuracoes: {
+        label: "Configurações",
+        path: "/configuracoes",
+        icon: Delete,
+      },
     });
 
     return {
@@ -29,7 +47,7 @@ export default {
   },
   methods: {
     toggle(value: Boolean) {
-    this.small = value;
+      this.small = value;
     },
   },
 };
@@ -57,15 +75,7 @@ export default {
               class="flex items-center transition-all p-2 pr-8 text-base text-amber-900 rounded-md dark:text-white hover:bg-amber-100 dark:hover:bg-amber-300/30"
               :class="{ 'bg-amber-400/20 ': $route.meta.title == item.label }"
             >
-              <svg
-                class="w-6 h-6 text-amber-500 transition duration-75 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-              </svg>
+              <component :is="item.icon" width="20" height="20" />
               <span class="mx-6 whitespace-nowrap">{{ item.label }}</span>
             </router-link>
           </li>
@@ -83,15 +93,7 @@ export default {
               class="flex items-center transition-all p-2 pr-8 text-amber-900 rounded dark:text-white hover:bg-amber-100 dark:hover:bg-amber-300/30"
               :class="{ 'bg-amber-400/20 ': $route.meta.title == item.label }"
             >
-              <svg
-                class="w-6 h-6 text-amber-500 transition duration-75 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-              </svg>
+              <component :is="item.icon" width="20" height="20" />
               <span class="mx-6 whitespace-nowrap">{{ item.label }}</span>
             </router-link>
           </li>

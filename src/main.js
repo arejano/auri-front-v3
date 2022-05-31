@@ -27,7 +27,6 @@ import Info from "@components/icons/Info.vue";
 import New from "@components/icons/New.vue";
 import Question from "@components/icons/Question.vue";
 import Save from "@components/icons/Save.vue";
-
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
 
@@ -57,6 +56,7 @@ app.component("Info", Info);
 app.component("New", New);
 app.component("Question", Question);
 app.component("Save", Save);
+
 
 app.use(router);
 app.use(vClickOutside);
