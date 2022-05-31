@@ -69,19 +69,20 @@ export default {
           <td class="flex justify-between px-4 py-4 text-right">
             <a
               href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline"
-              >Editar</a
+              class="font-medium text-amber-600 dark:text-neutral-300  dark:hover:bg-neutral-600 rounded p-2"
+              ><Edit width="20" height="20" /></a
             >
 
             <a
               href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline"
-              >Excluir</a
+              class="font-medium text-amber-600 dark:text-neutral-300  dark:hover:bg-neutral-600 rounded p-2"
+              ><Delete width="20" height="20" /></a
             >
             <a
               href="#"
-              class="font-medium text-amber-600 dark:text-neutral-300 hover:underline"
+              class="font-medium text-amber-600 dark:text-neutral-300  dark:hover:bg-neutral-600 rounded p-2"
               >Analise Completa
+              
             </a>
           </td>
         </tr>
