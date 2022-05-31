@@ -1,1 +1,3 @@
-<template>Reportar Erro</template>
+<template>
+  <UnderConstruction />
+</template>

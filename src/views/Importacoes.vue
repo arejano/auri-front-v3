@@ -10,4 +10,5 @@ export default {
 
 <template>
   <NavMenu />
+  <UnderConstruction />
 </template>
