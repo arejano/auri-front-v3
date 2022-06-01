@@ -21,7 +21,7 @@ export default {
   },
 
   setup() {
-    const showDropdow = ref(true);
+    const showDropdow = ref(false);
     const showSubContas = ref(false);
     const changeDropDown = () => {
       showDropdow.value = !showDropdow.value;

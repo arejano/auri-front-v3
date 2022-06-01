@@ -29,6 +29,8 @@ import Question from "@components/icons/Question.vue";
 import Save from "@components/icons/Save.vue";
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
+import Card from "@components/Card.vue";
+import Avatar from "@components/Avatar.vue";
 
 const app = createApp(App);
 
@@ -38,6 +40,8 @@ app.component("Section", Section);
 app.component("Skeleton", Skeleton);
 app.component("Input", Input);
 app.component("Button", Button);
+app.component("Card", Card);
+app.component("Avatar", Avatar);
 app.component("UnderConstruction", UnderConstruction);
 
 //Declare Global icons
