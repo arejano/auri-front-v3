@@ -1,0 +1,193 @@
+[33mcommit 6c4519ed1b6d9e69403ec0f90aeae43ee776bce9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: c898871 b550549
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 21:58:37 2022 -0300
+
+    Ajuste por merge
+
+[33mcommit b5505491162cd53ee934add5138066d3b77daa26[m[33m ([m[1;31morigin/troca_subcontas[m[33m)[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 21:57:18 2022 -0300
+
+    ajuste icons
+
+[33mcommit 1c159793416f868fecf278e993452a338f359a26[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 21:40:28 2022 -0300
+
+    rft
+
+[33mcommit c8988717a8756863386332994ad972c7abde0a07[m
+Merge: b5d9957 f3725e8
+Author: Marlos G Leite <marlosgleite@gmail.com>
+Date:   Mon May 30 21:39:03 2022 -0300
+
+    Merge branch 'main' of https://github.com/arejano/auri-front-v3
+
+[33mcommit b5d995751beadba75ca51bc24429f8e0687f9f3a[m
+Author: Marlos G Leite <marlosgleite@gmail.com>
+Date:   Mon May 30 21:38:47 2022 -0300
+
+    WIP
+
+[33mcommit f3725e8a142319978e60763741d5701f1cd610e4[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 20:56:55 2022 -0300
+
+    WIP
+
+[33mcommit d86d53181e9e8f6b153ddd347215eb61583f7ab4[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 20:53:30 2022 -0300
+
+    WIP
+
+[33mcommit 17e1d69408f2275d0dc24036e1ed12ef57e424c6[m[33m ([m[1;31morigin/lancamentos[m[33m)[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 20:40:58 2022 -0300
+
+    WIP
+
+[33mcommit bfe3a08215497823889d24f4a7aa1f75862218d5[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 17:00:44 2022 -0300
+
+    WIP
+
+[33mcommit bec3a4fe30f4c791f72e5e17705d85a684808f29[m
+Merge: 4bb08b4 5d09805
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 14:02:11 2022 -0300
+
+    Merge
+
+[33mcommit 4bb08b4a60289879b8c823704849a25b20ea62d3[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 14:00:32 2022 -0300
+
+    WIP
+
+[33mcommit 5d09805ad0c31db3db85cceb5cb8a143e09fc8c0[m
+Author: Marlos G Leite <marlosgleite@gmail.com>
+Date:   Mon May 30 11:20:37 2022 -0300
+
+    WIP
+
+[33mcommit eed1ddce7aa9baf278e8854f521d4565cec6dfa7[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 10:15:41 2022 -0300
+
+    WIP
+
+[33mcommit b47d628e3f1ca43dd9bfe87e48b55c3640f8a48d[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 09:48:29 2022 -0300
+
+    Adicionando os icones
+
+[33mcommit 26321038000b81f7301791ba259e660f1aeac651[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 09:04:18 2022 -0300
+
+    Adicionado registro para componentes globais
+
+[33mcommit d9343a0de5e762ace74233b41feaa09589430e8f[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 30 08:50:45 2022 -0300
+
+    WIP
+
+[33mcommit e216b6fc820d0790de2128037c8df89d6815f09c[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Sun May 29 15:06:22 2022 -0300
+
+    Ajustes
+
+[33mcommit 683fea8f47d455906667450bb0beb80cb86d67c1[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Sun May 29 14:12:37 2022 -0300
+
+    Finalizado Input e Button
+
+[33mcommit 94ebc3af43ade162487080a7c42bdfe026e88329[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Thu May 26 08:55:57 2022 -0300
+
+    UserMenu, session service
+
+[33mcommit 3e56b1be876805a9b751bde5529946f7408b5003[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Wed May 25 22:15:41 2022 -0300
+
+    Ajuste Login e NavMenu
+
+[33mcommit 4d66428bc2551ff385099051382c69fe4f212492[m[33m ([m[1;31morigin/Refatoracao_Services[m[33m)[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Tue May 24 22:11:26 2022 -0300
+
+    Ajuste para overflow-hidden no body
+
+[33mcommit a2a99d76e4820284c827b7c047d9464b637bfbe8[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Tue May 24 22:08:49 2022 -0300
+
+    WIP
+
+[33mcommit b60d4654575f418701bfcb7e7e7fe6bfed0768f6[m
+Merge: 3c116fd 0c5517c
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Tue May 24 11:12:18 2022 -0300
+
+    Merge branch 'Login' into main
+
+[33mcommit 0c5517c0a1a41d57c61a528d47584934388ca118[m[33m ([m[1;31morigin/Login[m[33m, [m[1;32mLogin[m[33m)[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Tue May 24 11:12:07 2022 -0300
+
+    Login
+    
+    Login Finalizado
+
+[33mcommit 7aed1d58f37b6c8855eacf5b328343999c9cdf94[m
+Merge: 445b6f6 5e12562
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Sun May 22 18:01:46 2022 -0300
+
+    Merge branch 'V1' into Login
+
+[33mcommit 5e12562026f11a9552c335caebae5315824d903a[m[33m ([m[1;31morigin/V1[m[33m)[m
+Merge: 445b6f6 3c116fd
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Sun May 22 18:01:24 2022 -0300
+
+    Merge branch 'main' into V1
+
+[33mcommit 3c116fd22fdea9ebaa2b8ed9c29beaed6fee6cc9[m
+Author: Marlos G Leite <marlosgleite@gmail.com>
+Date:   Sun May 22 18:00:03 2022 -0300
+
+    wip
+
+[33mcommit 445b6f6a1f9aff74fc46fb6c975fae5dd95ee98a[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 16 20:57:46 2022 -0300
+
+    WIP - Services
+
+[33mcommit 5e4e2026324ba90d712e52777377ad74c8732913[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Mon May 16 09:15:23 2022 -0300
+
+    WIP
+
+[33mcommit 0604bfa5d816a2113a0eeaf7385ba0933d3c8e04[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Fri May 13 20:12:49 2022 -0300
+
+    WIP
+
+[33mcommit 3eb445da70f856229e98b3923c3cb5fe6d001fc5[m
+Author: Gustavo Arejano <arejano@gmail.com>
+Date:   Fri May 13 20:12:31 2022 -0300
+
+    Initial commit

@@ -29,6 +29,7 @@ import Question from "@components/icons/Question.vue";
 import Save from "@components/icons/Save.vue";
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
+import DashboardIcon from "@components/icons/DashboardIcon.vue";
 
 const app = createApp(App);
 
@@ -56,6 +57,7 @@ app.component("Info", Info);
 app.component("New", New);
 app.component("Question", Question);
 app.component("Save", Save);
+app.component("DashboardIcon", DashboardIcon);
 
 
 app.use(router);
