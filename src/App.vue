@@ -28,7 +28,7 @@ export default {
     };
   },
   methods: {
-    toggleMenu(event:Boolean) {
+    toggleMenu(event: Boolean) {
       this.showMenu = event;
       this.$refs.sidebar.toggle(this.showMenu);
     },
@@ -38,9 +38,7 @@ export default {
 </script>
 
 <template>
-  <div
-    class="bg-white h-full text-neutral-900 dark:text-zinc-100 bg-estranho"
-  >
+  <div class="bg-white h-full text-neutral-900 dark:text-zinc-100 bg-estranho">
     <!-- <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" /> -->
     <NavMenu
       @menuToggle="toggleMenu($event)"

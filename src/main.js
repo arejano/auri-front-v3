@@ -30,6 +30,17 @@ import Save from "@components/icons/Save.vue";
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
 import DashboardIcon from "@components/icons/DashboardIcon.vue";
+import PerfilIcon from "@components/icons/PerfilIcon.vue";
+import LancamentosIcon from "@components/icons/LancamentosIcon.vue";
+import UrlIcon from "@components/icons/UrlIcon.vue";
+import AjudaIcon from "@components/icons/AjudaIcon.vue";
+import ErroIcon from "@components/icons/ErroIcon.vue";
+import SettingIcon from "@components/icons/SettingIcon.vue";
+
+
+import Card from "@components/Card.vue";
+import Avatar from "@components/Avatar.vue";
+
 
 const app = createApp(App);
 
@@ -39,6 +50,8 @@ app.component("Section", Section);
 app.component("Skeleton", Skeleton);
 app.component("Input", Input);
 app.component("Button", Button);
+app.component("Card", Card);
+app.component("Avatar", Avatar);
 app.component("UnderConstruction", UnderConstruction);
 
 //Declare Global icons
@@ -58,6 +71,12 @@ app.component("New", New);
 app.component("Question", Question);
 app.component("Save", Save);
 app.component("DashboardIcon", DashboardIcon);
+app.component("PerfilIcon", PerfilIcon);
+app.component("LancamentosIcon", LancamentosIcon);
+app.component("UrlIcon", UrlIcon);
+app.component("AjudaIcon", AjudaIcon);
+app.component("ErroIcon", ErroIcon);
+app.component("SettingIcon", SettingIcon);
 
 
 app.use(router);

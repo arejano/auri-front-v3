@@ -13,6 +13,7 @@ import Usuarios from "@views/Usuarios.vue";
 import Integracoes from "@views/Integracoes.vue";
 import Importacoes from "@views/Importacoes.vue";
 import NotFound from "@views/NotFound.vue";
+import JornadaDoLead from "@views/JornadaDoLead.vue";
 
 import Login from "@views/Login.vue"
 
@@ -32,6 +33,7 @@ const routes = [
     meta: { title: "Criador de URLS" },
   },
   { path: "/leads", component: Leads, meta: { title: "Leads" } },
+  { path: "/leads/jornada/:lead_id", component: JornadaDoLead, meta: { title: "Jornada do lead" } },
   { path: "/perfil", component: Perfil, meta: { title: "Perfil" } },
   { path: "/perfil/conta", component: Conta, meta: { title: "Minha Conta" } },
   { path: "/perfil/contas", component: Contas, meta: { title: "Sub Contas" } },

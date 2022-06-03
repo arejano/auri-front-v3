@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "DashboardIcon",
+  name: "ErroIcon",
   props: {
     width: { type: String, default: "32" },
     height: { type: String, default: "32" },
@@ -17,15 +17,15 @@ export default {
     xmlns:xlink="http://www.w3.org/1999/xlink"
     aria-hidden="true"
     role="img"
-    class="iconify iconify--material-symbols"
+    class="iconify iconify--ic"
     :width="width"
-    :height="height"
+    height="height"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
   >
     <path
       fill="#888888"
-      d="M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Zm0-2h6V5H5v14Zm8 0h6v-7h-6v7Zm0-9h6V5h-6v5Z"
+      d="M12 7c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V8c0-.55.45-1 1-1zm-.01-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8zm1-3h-2v-2h2v2z"
     ></path>
   </svg>
 </template>

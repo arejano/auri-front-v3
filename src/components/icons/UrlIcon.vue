@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "DashboardIcon",
+  name: "UrlIcon",
   props: {
     width: { type: String, default: "32" },
     height: { type: String, default: "32" },
@@ -11,21 +11,22 @@ export default {
 };
 </script>
 
+
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     aria-hidden="true"
     role="img"
-    class="iconify iconify--material-symbols"
+    class="iconify iconify--ic"
     :width="width"
-    :height="height"
+    height="height"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
   >
     <path
       fill="#888888"
-      d="M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Zm0-2h6V5H5v14Zm8 0h6v-7h-6v7Zm0-9h6V5h-6v5Z"
+      d="M8 11h8v2H8v-2zm12.1 1H22c0-2.76-2.24-5-5-5h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1zM3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM19 12h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3z"
     ></path>
   </svg>
 </template>
