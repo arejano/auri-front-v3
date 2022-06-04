@@ -22,8 +22,18 @@ export class LeadsService {
     return response;
   }
 
+  async getLead(lead_id: number) {
+    const response = await this.api.get(`/client/leads/journey/${lead_id}`);
+    return response;
+  }
+
   async export() {
     const response = await this.api.blob("/client/leads/report.csv");
+    return response;
+  }
+
+  async report() {
+    const response = await this.api.get(`/client/leads/lead-capture-report`);
     return response;
   }
 }

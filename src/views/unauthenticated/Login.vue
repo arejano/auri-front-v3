@@ -52,7 +52,7 @@ export default {
   <div class="flex w-full justify-center">
     <div class="mt-16 p-10 w-96">
       <div class="w-full flex justify-center mb-20">
-        <img src="../assets/auri-texto.png" width="180" />
+        <img src="../../assets/auri-texto.png" width="180" />
       </div>
       <div class="flex flex-col space-y-2">
         <Input

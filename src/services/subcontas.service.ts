@@ -17,7 +17,6 @@ export class SubAccountsService {
     const response = await this.api.get(
       "/client/user-accounts/select-user-account"
     );
-    console.log(response)
     return response;
   }
 
