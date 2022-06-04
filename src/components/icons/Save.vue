@@ -18,8 +18,8 @@ export default {
     aria-hidden="true"
     role="img"
     class="iconify iconify--carbon"
-    width="width"
-    height="height"
+    :width="width"
+    :height="height"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 32 32"
   >

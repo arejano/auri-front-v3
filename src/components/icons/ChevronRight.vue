@@ -18,8 +18,8 @@ export default {
     aria-hidden="true"
     role="img"
     class="iconify iconify--heroicons-outline"
-    width="width"
-    height="heigth"
+    :width="width"
+    :height="heigth"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
   >

@@ -19,7 +19,7 @@ export default {
     role="img"
     class="iconify iconify--ic"
     :width="width"
-    height="height"
+    :height="height"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
   >
