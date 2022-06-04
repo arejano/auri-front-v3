@@ -90,23 +90,40 @@ export class ApiService {
         return response.json();
       });
   }
-  async delete(url: string, request: any) {
-    return await fetch(`${this.api_url}${url}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: this.getAuthToken(),
-        "X-CSRF-TOKEN": "",
-      },
+
+  // async delete(url: string, request: any) {
+  //   return await fetch(`${this.api_url}${url}`, {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //       Authorization: this.getAuthToken(),
+  //       "X-CSRF-TOKEN": "",
+  //     },
+  //     method: "DELETE",
+  //     // TODO: Rever
+  //     // mode: "no-cors",
+  //     body: JSON.stringify(request),
+  //   })
+  //     .then(this.handleErrors)
+  //     .then((response) => {
+  //       return response.json();
+  //     });
+  // }
+
+  async delete(url: string) {
+    await fetch(`${this.api_url}${url}`, {
       method: "DELETE",
-      // TODO: Rever
-      // mode: "no-cors",
-      body: JSON.stringify(request),
-    })
-      .then(this.handleErrors)
-      .then((response) => {
-        return response.json();
-      });
+    }).then((res) => {
+      return res;
+    });
+  }
+
+  async put(url: string) {
+    await fetch(`${this.api_url}${url}`, {
+      method: "PUT",
+    }).then((res) => {
+      return res;
+    });
   }
 
   async blob(url: string) {

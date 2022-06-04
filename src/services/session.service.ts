@@ -4,17 +4,20 @@ import { Store } from "./core/store.service";
 import { Logger } from "./core/logger.service";
 import { LoginModel } from "@/models/login.model";
 import UserService from "./user.service";
+import { DateUtils } from "../utils/date";
 
 export default class LoginService {
   store: Store;
   api: ApiService;
   logger: Logger = new Logger();
   userService: UserService;
+  dateUtils: DateUtils;
 
   constructor() {
     this.store = new Store();
     this.api = new ApiService();
     this.userService = new UserService();
+    this.dateUtils = new DateUtils();
   }
 
   async login(request: LoginModel) {
@@ -83,5 +86,17 @@ export default class LoginService {
       return false;
     }
     return true;
+  }
+
+  userIsValid() {
+    return this.store.getUser() && this.tokenDateIsValid();
+  }
+
+  tokenDateIsValid() {
+    // if (this.dateUtils.validExpiration(this.store.getExpirationDate())) {
+    //   this.store.clear();
+    //   return
+    // }
+    return false
   }
 }

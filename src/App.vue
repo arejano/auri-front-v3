@@ -12,6 +12,7 @@ export default {
   },
   setup() {
     let type = ref(sidebarType());
+   
     const showSize = () => {
       type.value = sidebarType();
     };
@@ -27,6 +28,7 @@ export default {
       showMenu: false,
     };
   },
+  mounted() {},
   methods: {
     toggleMenu(event: Boolean) {
       this.showMenu = event;

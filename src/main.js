@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import "./tailwind.css";
 import App from "./App.vue";
-import router from "./router/index";
+import router from "./router/router";
 import "flowbite";
 import vClickOutside from "click-outside-vue3";
 

@@ -8,9 +8,31 @@ export class LancamentosService {
     return response;
   }
 
-  async getArquivados() {
-    const response = await this.api.get("/client/launches?archived=true");
+  async post(data: any) {
+    const response = await this.api.post(`/client/launches`, data);
     return response;
+  }
+
+  async getLancamento() {
+    const response = await this.api.get("/client/launches");
+    return response;
+  }
+
+  async update() {
+    const response = await this.api.get("/client/launches");
+    return response;
+  }
+
+  async delete(id: number) {
+    await this.api.delete(`/cliet/launches/${id}`).then((response) => {
+      return response;
+    });
+  }
+
+  async restore(id: number) {
+    await this.api.put(`/cliet/restore-launches/${id}`).then((response) => {
+      return response;
+    });
   }
 
   async new(data: any) {
