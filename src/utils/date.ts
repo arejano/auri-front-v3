@@ -4,13 +4,15 @@ export class DateUtils {
     return Math.abs(Math.round(diff / 3600));
   }
 
-  moreThan24(date_hours: Number) {
-    return date_hours > 24000;
+  moreThan12(date_hours: Number) {
+    return date_hours > 12000;
   }
 
-  validExpiration(d: Date) {
-    const data_atual = new Date();
-    const diff_hours = this.diffHours(data_atual, d);
-    return this.moreThan24(diff_hours);
+  expired(d: Date) {
+    if (d) {
+      const dh = this.diffHours(new Date(), new Date(d));
+      return this.moreThan12(dh);
+    }
+    return false;
   }
 }

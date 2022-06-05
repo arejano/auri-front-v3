@@ -93,10 +93,9 @@ export default class LoginService {
   }
 
   tokenDateIsValid() {
-    // if (this.dateUtils.validExpiration(this.store.getExpirationDate())) {
-    //   this.store.clear();
-    //   return
-    // }
-    return false
+    if (this.dateUtils.expired(this.store.getExpirationDate())) {
+      this.store.clear();
+      return
+    }
   }
 }

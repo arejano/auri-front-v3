@@ -9,6 +9,7 @@ export class Store {
   }
   saveToken(token: string) {
     localStorage.setItem("token", JSON.stringify(token));
+    this.saveExpirationDate();
   }
 
   saveUser(user: User) {
@@ -17,6 +18,7 @@ export class Store {
   }
 
   saveExpirationDate() {
+    localStorage.delete('expiration')
     localStorage.setItem(
       "expiration",
       JSON.stringify({ dataLogin: new Date() })
@@ -24,7 +26,7 @@ export class Store {
   }
 
   getExpirationDate(){
-    return JSON.parse(localStorage.getItem("expiration"))
+    return JSON.parse(localStorage.getItem("expiration")).dataLogin
   }
 
   getUser() {

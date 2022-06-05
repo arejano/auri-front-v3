@@ -1,28 +1,16 @@
 <script lang="ts">
-import { ref } from "vue";
 //import Nav from "@components/Navbar/Nav.vue";
-import Sidebar from "@components/sidebar/Sidebar.vue";
+import SideBar from "@components/SideBar/SideBar.vue";
 import NavMenu from "@components/navmenu/Nav.vue";
-import { sidebarType } from "@components/sidebar/state";
+
 
 export default {
   components: {
-    Sidebar,
+    SideBar,
     NavMenu,
   },
   setup() {
-    let type = ref(sidebarType());
-   
-    const showSize = () => {
-      type.value = sidebarType();
-    };
-
-    window.addEventListener("resize", showSize);
-
-    return {
-      type,
-    };
-  },
+     },
   data() {
     return {
       showMenu: false,
@@ -42,14 +30,15 @@ export default {
 <template>
   <div class="bg-white h-full text-neutral-900 dark:text-zinc-100 bg-estranho">
     <!-- <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" /> -->
-    <NavMenu
-      @menuToggle="toggleMenu($event)"
-      showMenu="showMenu"
-      v-if="$route.meta.title !== 'Login'"
-    />
+    <!-- <NavMenu -->
+    <!--   @menuToggle="toggleMenu($event)" -->
+    <!--   showMenu="showMenu" -->
+    <!--   v-if="$route.meta.title !== 'Login'" -->
+    <!-- /> -->
     <div class="flex h-full">
       <div v-if="$route.meta.title !== 'Login'">
-        <Sidebar ref="sidebar" show="showMenu" />
+        <SideBar />
+        <!-- <Sidebar ref="sidebar" show="showMenu" /> -->
       </div>
       <main class="p-10 overflow-auto h-full flex justify-center w-full">
         <div class="w-full" style="max-width: 1366px">

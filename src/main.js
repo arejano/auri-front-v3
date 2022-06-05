@@ -36,11 +36,11 @@ import UrlIcon from "@components/icons/UrlIcon.vue";
 import AjudaIcon from "@components/icons/AjudaIcon.vue";
 import ErroIcon from "@components/icons/ErroIcon.vue";
 import SettingIcon from "@components/icons/SettingIcon.vue";
-
+import ArrowLeftSolid from "@icons/ArrowLeftSolid.vue";
+import Dots from "@icons/Dots.vue";
 
 import Card from "@components/Card.vue";
 import Avatar from "@components/Avatar.vue";
-
 
 const app = createApp(App);
 
@@ -77,7 +77,8 @@ app.component("UrlIcon", UrlIcon);
 app.component("AjudaIcon", AjudaIcon);
 app.component("ErroIcon", ErroIcon);
 app.component("SettingIcon", SettingIcon);
-
+app.component("ArrowLeftSolid", ArrowLeftSolid);
+app.component("Dots", Dots);
 
 app.use(router);
 app.use(vClickOutside);
