@@ -5,6 +5,10 @@ import router from "./router/router";
 import "flowbite";
 import vClickOutside from "click-outside-vue3";
 
+
+//Notifications
+import Notifications from '@components/notifications/notifications.vue'
+
 // Import GlobalComponents
 import Title from "@components/Title.vue";
 import Section from "@components/Section.vue";
@@ -31,6 +35,8 @@ import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
 import DashboardIcon from "@components/icons/DashboardIcon.vue";
 import PerfilIcon from "@components/icons/PerfilIcon.vue";
+import UserGroupIcon from "@components/icons/UserGroupIcon.vue";
+import LogoutIcon from "@components/icons/LogoutIcon.vue";
 import LancamentosIcon from "@components/icons/LancamentosIcon.vue";
 import UrlIcon from "@components/icons/UrlIcon.vue";
 import AjudaIcon from "@components/icons/AjudaIcon.vue";
@@ -53,6 +59,7 @@ app.component("Button", Button);
 app.component("Card", Card);
 app.component("Avatar", Avatar);
 app.component("UnderConstruction", UnderConstruction);
+app.component("Notifications", Notifications);
 
 //Declare Global icons
 app.component("Search", Search);
@@ -72,6 +79,8 @@ app.component("Question", Question);
 app.component("Save", Save);
 app.component("DashboardIcon", DashboardIcon);
 app.component("PerfilIcon", PerfilIcon);
+app.component("UserGroupIcon", UserGroupIcon);
+app.component("LogoutIcon", LogoutIcon);
 app.component("LancamentosIcon", LancamentosIcon);
 app.component("UrlIcon", UrlIcon);
 app.component("AjudaIcon", AjudaIcon);

@@ -4,6 +4,7 @@ export default {
   props: {
     width: { type: String, default: "32" },
     height: { type: String, default: "32" },
+    fill: { type: String, default: "#888888" },
   },
   data() {
     return {};
@@ -24,7 +25,7 @@ export default {
     viewBox="0 0 24 24"
   >
     <path
-      fill="fill"
+      :fill="fill"
       stroke="stroke"
       stroke-linecap="round"
       stroke-linejoin="round"

@@ -28,17 +28,11 @@ export default {
 </script>
 
 <template>
+  <!-- <Notifications /> -->
   <div class="bg-white h-full text-neutral-900 dark:text-zinc-100 bg-estranho">
-    <!-- <NavMenu v-if="type.normal && $route.meta.title !== 'Login'" /> -->
-    <!-- <NavMenu -->
-    <!--   @menuToggle="toggleMenu($event)" -->
-    <!--   showMenu="showMenu" -->
-    <!--   v-if="$route.meta.title !== 'Login'" -->
-    <!-- /> -->
     <div class="flex h-full">
       <div v-if="$route.meta.title !== 'Login'">
         <SideBar />
-        <!-- <Sidebar ref="sidebar" show="showMenu" /> -->
       </div>
       <main class="p-10 overflow-auto h-full flex justify-center w-full">
         <div class="w-full" style="max-width: 1366px">

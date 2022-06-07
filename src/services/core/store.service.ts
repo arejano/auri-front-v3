@@ -18,7 +18,7 @@ export class Store {
   }
 
   saveExpirationDate() {
-    localStorage.delete('expiration')
+    localStorage.removeItem('expiration')
     localStorage.setItem(
       "expiration",
       JSON.stringify({ dataLogin: new Date() })

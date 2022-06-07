@@ -10,7 +10,7 @@ export default {
 
   setup(props) {
     const hoverMenu = ref(null);
-    const selectedMenu = ref(`/${window.location.href.split('/')[3]}`)
+    const selectedMenu = ref(`/${window.location.href.split("/")[3]}`);
     const router = useRouter();
 
     const hover = (menu) => {
@@ -26,6 +26,13 @@ export default {
       router.push({ path: menu.path });
     };
 
+    const strokeSelect = (path) => {
+      if (selectedMenu.value == path) {
+        return "#FFF";
+      }
+      return;
+    };
+
     return {
       menus,
       props,
@@ -34,6 +41,7 @@ export default {
       noHover,
       to,
       selectedMenu,
+      strokeSelect,
     };
   },
 };
@@ -54,11 +62,16 @@ export default {
             hoverMenu == menu.path || selectedMenu == menu.path,
         }"
       >
-        <component :is="menu.icon" width="20" height="20" />
+        <component
+          :is="menu.icon"
+          width="20"
+          height="20"
+          :fill="strokeSelect(menu.path)"
+        />
       </div>
       <div v-if="!mini" class="whitespace-nowrap items-center flex">
         <span
-          class="font-semibold tracking-wider text-neutral-400"
+          class="font-semibold tracking-wider text-sm text-neutral-400"
           :class="{
             'text-neutral-100':
               hoverMenu == menu.path || selectedMenu == menu.path,
@@ -72,7 +85,7 @@ export default {
 
   <div class="h-10"></div>
   <div class="h-8 flex items-center pl-3">
-    <span v-if="!mini" class="font-semibold tracking-wider text-neutral-500"
+    <span v-if="!mini" class="font-semibold tracking-wider text-sm text-neutral-500"
       >Sistema</span
     >
   </div>
@@ -84,17 +97,22 @@ export default {
       @mouseleave="noHover()"
     >
       <div
-        class="m-3 p-2 rounded"
+        class="m-3 p-2 ral-900 rounded"
         :class="{
           'bg-neutral-700/50':
             hoverMenu == menu.path || selectedMenu == menu.path,
         }"
       >
-        <component :is="menu.icon" width="20" height="20" />
+        <component
+          :is="menu.icon"
+          width="20"
+          height="20"
+          :fill="strokeSelect(menu.path)"
+        />
       </div>
       <div v-if="!mini" class="whitespace-nowrap items-center flex">
         <span
-          class="font-semibold tracking-wider text-neutral-400"
+          class="font-semibold tracking-wider text-sm text-neutral-400"
           :class="{
             'text-neutral-100':
               hoverMenu == menu.path || selectedMenu == menu.path,
