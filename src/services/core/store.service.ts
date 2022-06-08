@@ -1,7 +1,12 @@
 import { User } from "@/models/User";
 import { DateUtils } from "@/utils/date";
 
-export class Store {
+interface SubAccounts {
+  key: string;
+  label: string;
+}
+
+export default class StoreService {
   dateUtils: DateUtils;
 
   constructor() {
@@ -18,15 +23,18 @@ export class Store {
   }
 
   saveExpirationDate() {
-    localStorage.removeItem('expiration')
+    localStorage.removeItem("expiration");
     localStorage.setItem(
       "expiration",
       JSON.stringify({ dataLogin: new Date() })
     );
   }
 
-  getExpirationDate(){
-    return JSON.parse(localStorage.getItem("expiration")).dataLogin
+  getExpirationDate(): Date {
+    const expirationDate = localStorage.getItem("expiration");
+    if (expirationDate) {
+      return JSON.parse(expirationDate).dataLogin;
+    }
   }
 
   getUser() {
@@ -41,5 +49,13 @@ export class Store {
 
   clear() {
     localStorage.clear();
+  }
+
+  saveSubAccounts(response: SubAccounts[]) {
+    localStorage.setItem("subAccounts", JSON.stringify(response));
+  }
+
+  getSubAccounts(): String {
+    return JSON.parse(localStorage.getItem("subAccounts"));
   }
 }

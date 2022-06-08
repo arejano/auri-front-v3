@@ -2,6 +2,7 @@
 import Input from "@components/Input.vue";
 import Button from "@components/Button.vue";
 import Session from "@services/session.service";
+import UserDomain from "@domain/users.domain";
 
 export default {
   components: { Input, Button },
@@ -11,15 +12,16 @@ export default {
       user: "",
       password: "",
       session: new Session(),
+      userDomain: new UserDomain(),
     };
   },
   created: function () {
-    localStorage.clear()
     this.loading = true;
     if (this.session.isLogged()) {
       this.loading = false;
       this.$router.push({ path: "/perfil" });
     } else {
+      localStorage.clear();
       this.loading = false;
     }
   },
@@ -36,13 +38,13 @@ export default {
         password: "12345678",
       };
 
-      await this.session.login(defLogin).then((response) => {
-        if (response.isSuccess) {
+      this.userDomain.login(defLogin).then((response) => {
+        if (response.success) {
           setTimeout(() => {
-            this.loading = false;
             this.$router.push({ path: "/perfil" });
           }, 1000);
         }
+        this.loading = false;
       });
     },
   },

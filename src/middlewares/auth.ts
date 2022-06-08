@@ -1,14 +1,15 @@
-import { Store } from "@services/core/store.service";
+import StoreService from "@/services/core/store.service";
 import { DateUtils } from "../utils/date";
 
-const store: Store = new Store();
+const store: StoreService = new StoreService();
 const dateUtils: DateUtils = new DateUtils();
 
 export default function auth({ next }) {
-  if (
-    localStorage.getItem("token") &&
-    !dateUtils.expired(store.getExpirationDate())
-  ) {
+  if (dateUtils.expired(store.getExpirationDate())) {
+    next("login");
+  }
+
+  if (localStorage.getItem("token")) {
     next();
   } else {
     next("login");
