@@ -18,15 +18,15 @@ export class Store {
   }
 
   saveExpirationDate() {
-    localStorage.delete('expiration')
+    localStorage.delete("expiration");
     localStorage.setItem(
       "expiration",
       JSON.stringify({ dataLogin: new Date() })
     );
   }
 
-  getExpirationDate(){
-    return JSON.parse(localStorage.getItem("expiration")).dataLogin
+  getExpirationDate() {
+    return JSON.parse(localStorage.getItem("expiration")).dataLogin;
   }
 
   getUser() {
