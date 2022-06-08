@@ -14,6 +14,7 @@ export default {
     };
   },
   created: function () {
+    localStorage.clear()
     this.loading = true;
     if (this.session.isLogged()) {
       this.loading = false;

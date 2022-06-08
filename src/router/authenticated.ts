@@ -18,7 +18,7 @@ import Login from "@views/Login.vue";
 import Auth from "@middlewares/auth";
 
 const Authenticated = [
-  { path: "/", component: Home, meta: { title: "Home" } },
+  { path: "/", component: Home, meta: { title: "Home", middleware: Auth } },
   {
     path: "/dashboard",
     component: Dashboard,
