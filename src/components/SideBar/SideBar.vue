@@ -4,6 +4,7 @@ import SideBarMenus from "./SideBarMenus.vue";
 import UserMenu from "./UserMenu.vue";
 
 export default {
+  name: "SideBar",
   components: {
     SideBarMenus,
     UserMenu,
@@ -68,7 +69,10 @@ export default {
       <SideBarMenus :mini="mini" />
     </section>
 
-    <div v-if="showDropMenu" class="z-10 rounded border-t border-neutral-700 absolute shadow bg-neutral-800 bottom-12 left-6">
+    <div
+      v-if="showDropMenu"
+      class="z-10 rounded border-t border-neutral-700 absolute shadow bg-neutral-800 bottom-12 left-6"
+    >
       <UserMenu :mini="!mini" />
     </div>
 
@@ -99,7 +103,7 @@ export default {
           </div>
 
           <div
-          @click="showDropMenu= !showDropMenu"
+            @click="showDropMenu = !showDropMenu"
             v-if="mini"
             class="dark:bg-neutral-700/70 rounded-full h-6 w-6 items-center flex justify-center"
           >

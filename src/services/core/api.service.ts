@@ -1,10 +1,10 @@
 import { Logger } from "./logger.service";
-import { Store } from "@core/store.service";
+import StoreService from "./store.service";
 
 export class ApiService {
   api_url: string = import.meta.env.VITE_APP_API_URL;
   logger: Logger = new Logger();
-  store: Store = new Store();
+  store: StoreService = new StoreService();
   constructor() {}
 
   async get(url: string) {
@@ -68,7 +68,9 @@ export class ApiService {
     })
       .then(this.handleErrors)
       .then((response) => {
-        return response.json();
+        if (response) {
+          return response;
+        }
       });
   }
 

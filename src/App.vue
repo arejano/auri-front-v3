@@ -1,13 +1,11 @@
 <script lang="ts">
 //import Nav from "@components/Navbar/Nav.vue";
 import SideBar from "@components/SideBar/SideBar.vue";
-import NavMenu from "@components/navmenu/Nav.vue";
 
 
 export default {
   components: {
     SideBar,
-    NavMenu,
   },
   setup() {
      },

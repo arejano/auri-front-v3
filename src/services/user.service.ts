@@ -1,13 +1,13 @@
 import { User } from "@/models/User";
 import { ApiService } from "./core/api.service";
-import { Store } from "./core/store.service";
+import StoreService from "./core/store.service";
 
 class UserService {
   api: ApiService;
-  store: Store;
+  store: StoreService;
   constructor() {
     this.api = new ApiService();
-    this.store = new Store();
+    this.store = new StoreService();
   }
 
   async getProfile() {
@@ -19,6 +19,12 @@ class UserService {
   async me() {
     return this.api.get("/me");
   }
+
+
+  async myAccount() {
+    return this.api.get("/client/user-accounts/my-account");
+  }
+
 
   create(request: any) {
     return this.api.post("/client/user_accounts/create/", request);
@@ -32,5 +38,13 @@ class UserService {
     return this.api.post("/client/user_accounts/update/", request);
   }
 }
+
+const cc = {
+  login:(v) => {
+    console.log(v)
+  }
+}
+
+
 
 export default UserService;

@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
       "@assets": resolve(__dirname, "src/asses"),
+      "@domain": resolve(__dirname, "src/domain"),
       "@components": resolve(__dirname, "src/components"),
       "@middlewares": resolve(__dirname, "src/middlewares"),
       "@core": resolve(__dirname, "src/services/core"),
