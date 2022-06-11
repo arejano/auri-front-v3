@@ -6,7 +6,7 @@ interface SubAccounts {
   label: string;
 }
 
-export default class StoreService {}
+export default class StoreService {
   dateUtils: DateUtils;
 
   constructor() {
@@ -23,11 +23,6 @@ export default class StoreService {}
   }
 
   saveExpirationDate() {
-
-    localStorage.delete("expiration");
-
-    localStorage.removeItem('expiration')
-
     localStorage.removeItem("expiration");
     localStorage.setItem(
       "expiration",
@@ -35,8 +30,6 @@ export default class StoreService {}
     );
   }
 
-  getExpirationDate() {
-    return JSON.parse(localStorage.getItem("expiration")).dataLogin;
   getExpirationDate(): Date {
     const expirationDate = localStorage.getItem("expiration");
     if (expirationDate) {
