@@ -9,6 +9,7 @@ export default {
   },
   data() {
     return {
+      showModal: false,
       loading: false,
       perfilService: PerfilService,
       profile: {},
@@ -21,7 +22,11 @@ export default {
       this.loading = false;
     });
   },
-  methods: {},
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+  },
 };
 </script>
 
