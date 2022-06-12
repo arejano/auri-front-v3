@@ -12,8 +12,8 @@ export default {
   setup() {
     const showMenu = ref(true);
     const showUserMenu = ref(false);
-    const showDropMenu = ref(true);
-    const mini = ref(true);
+    const showDropMenu = ref(false);
+    const mini = ref(false);
 
     const changeMini = () => {
       mini.value = !mini.value;

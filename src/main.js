@@ -11,6 +11,7 @@ import Notifications from '@components/notifications/notifications.vue'
 
 // Import GlobalComponents
 import Title from "@components/Title.vue";
+import Modal from "@components/Modal.vue";
 import Section from "@components/Section.vue";
 import Skeleton from "@components/Skeleton.vue";
 import UnderConstruction from "@components/UnderConstruction.vue";
@@ -52,6 +53,7 @@ const app = createApp(App);
 
 //Declare Global Components
 app.component("Title", Title);
+app.component("Modal", Modal);
 app.component("Section", Section);
 app.component("Skeleton", Skeleton);
 app.component("Input", Input);

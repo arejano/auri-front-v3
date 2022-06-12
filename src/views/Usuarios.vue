@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       loading: false,
+      showModal:false,
       searching: false,
       contas: [],
       contasService: new SubAccountsService(),
@@ -35,6 +36,9 @@ export default {
         this.loading = false;
       });
     },
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
   },
   created: function () {
     this.getData();
@@ -44,13 +48,18 @@ export default {
 
 <template class="">
   <NavMenu />
+
+  <Modal @showModal="showModal = $event" :show="showModal">
+    Criação do usuaŕio
+  </Modal>
+
   <Skeleton v-if="loading" />
   <div v-if="!loading" class="py-2 mt-4">
     <div class="flex justify-between">
       <div class="flex gap-4">
         <Title title="Contas" />
       </div>
-      <Button class="w-32" label="Adicionar" :loading="loading" />
+      <Button @click="showModal = true" class="w-32" label="Adicionar" :loading="loading" />
     </div>
   </div>
 
