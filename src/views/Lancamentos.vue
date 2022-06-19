@@ -8,6 +8,7 @@ export default {
   },
   data() {
     return {
+      showModal: false,
       loading: false,
       searching: false,
       contas: [],
@@ -30,6 +31,12 @@ export default {
         this.loading = false;
       });
     },
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+    toLancamento() {
+      this.$router.push({ path: "/lancamentos/novo" });
+    },
   },
   created: function () {
     this.getData();
@@ -42,6 +49,11 @@ export default {
     title="Lançamentos"
     subtitle="Acompanhe cada lançamento de forma individual e compare."
   />
+
+  <div class="flex justify-end">
+    <Button @click="toLancamento()" label="Novo Lançamento" class="w-64" />
+  </div>
+  <NavMenu />
 
   <TableLancamentos :data="contas" class="mt-8" />
 </template>

@@ -19,7 +19,7 @@ export default {
           <span class="cursor-pointer">Ativos</span>
           <span class="cursor-pointer">Arquivados</span>
         </div>
-        <Button label="Novo Lançamento" class="w-64" />
+          
       </div>
     </div>
   </div>

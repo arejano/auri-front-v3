@@ -38,11 +38,11 @@ export default {
 <template>
   <aside
     v-if="showMenu"
-    class="dark:bg-neutral-900 select-none flex flex-col transition-all h-full w-64 dark:border-r dark:border-neutral-700/30"
+    class="dark:bg-neutral-900 select-none flex flex-col transition-all h-full w-64 dark:border-r dark:border-neutral-700/30 "
     :class="{ 'w-16': mini }"
   >
-    <section class="flex justify-between pl-4 py-4 min-h-24 items-center">
-      <div class="cursor-pointer transition-all" @click="changeMini">
+    <section class="flex justify-between pl-4 py-4 min-h-24 items-center ">
+      <div class="cursor-pointer transition-all " @click="changeMini">
         <img
           src="../../assets/logo.png"
           class="h-10 w-8"
@@ -61,17 +61,17 @@ export default {
 
       <div
         v-else
-        class="dark:bg-neutral-700/50 dark:hover:bg-neutral-600/50 cursor-pointer dark:border-t dark:border-neutral-700 rounded-l h-6 w-2 flex justify-center dark:text-neutral-300/80 transition-all"
+        class=" dark:bg-neutral-700/50 dark:hover:bg-neutral-600/50 cursor-pointer dark:border-t dark:border-neutral-700 rounded-l h-6 w-2 flex justify-center dark:text-neutral-300/80 transition-all"
         @click="changeMini"
       ></div>
     </section>
-    <section class="h-full overflow-auto">
+    <section class="h-full overflow-x-hidden">
       <SideBarMenus :mini="mini" />
     </section>
 
     <div
       v-if="showDropMenu"
-      class="z-10 rounded border-t border-neutral-700 absolute shadow bg-neutral-800 bottom-12 left-6"
+      class="z-10 rounded border-t border-neutral-700 absolute shadow bg-neutral-800 bottom-12 left-6 "
     >
       <UserMenu :mini="!mini" />
     </div>

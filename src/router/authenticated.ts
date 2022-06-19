@@ -9,6 +9,7 @@ import CriadorUrls from "@views/CriadorUrls.vue";
 import Leads from "@views/Leads.vue";
 import Conta from "@views/Conta.vue";
 import Contas from "@views/Contas.vue";
+import NovoLancamento from "@views/NovoLancamento.vue";
 import Usuarios from "@views/Usuarios.vue";
 import Integracoes from "@views/Integracoes.vue";
 import Importacoes from "@views/Importacoes.vue";
@@ -88,6 +89,11 @@ const Authenticated = [
     path: "/configuracoes",
     meta: { title: "Configurações", middleware: Auth },
     component: Configuracoes,
+  },
+  {
+    path: "/lancamentos/novo",
+    meta: { title: "Novo Lançamento", middleware: Auth },
+    component: NovoLancamento,
   },
   { path: "/:path(.*)", component: NotFound },
 ];

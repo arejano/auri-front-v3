@@ -4,12 +4,14 @@ import TableContas from "@components/TableContas.vue";
 import Pagination from "@components/Pagination.vue";
 import { SubAccountsService } from "@services/subcontas.service";
 import NavMenu from "@components/NavMenu.vue";
+import NovoUsuario from "@components/NovoUsuario.vue";
 
 export default {
   components: {
     TableContas,
     Pagination,
     NavMenu,
+    NovoUsuario,
   },
   data() {
     return {
@@ -50,7 +52,7 @@ export default {
   <NavMenu />
 
   <Modal @showModal="showModal = $event" :show="showModal">
-    Criação do usuaŕio
+    <NovoUsuario/>
   </Modal>
 
   <Skeleton v-if="loading" />
