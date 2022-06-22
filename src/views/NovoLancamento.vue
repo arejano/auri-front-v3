@@ -20,31 +20,34 @@ export default {
       subtitle="Criar Lançamento
 Insira um nome e defina a utm_campaign associada."
     />
-    <div class="flex gap-6 self-start flex flex-col">
-      <div class="flex gap-2">
+    <div class="flex gap-6 self-start flex flex-col w-2/5">
+      <div class="table-column gap-8 break-before-column">
         <Input
           label="Nome"
           :value="nome"
           type="text"
-          placeholder="Nome"
+          placeholder="Nome do Lançamento"
           @input="nome = $event.target.value"
         />
+      </div>
+      <div class="flex w-3/4 gap-6">
         <Input
-          label="Nome"
+          label="Tipo de Lançamento"
           :value="nome"
           type="text"
-          placeholder="Nome"
+          placeholder="Clássico / Outros"
+          @input="nome = $event.target.value"
+        />
+
+        <Input
+          label="Tipo de Lançamento"
+          :value="nome"
+          type="text"
+          placeholder="Perpétuo"
           @input="nome = $event.target.value"
         />
       </div>
       <div class="flex gap-2">
-        <Input
-          label="Nome"
-          :value="nome"
-          type="text"
-          placeholder="Nome"
-          @input="nome = $event.target.value"
-        />
         <Input
           label="Nome"
           :value="nome"
