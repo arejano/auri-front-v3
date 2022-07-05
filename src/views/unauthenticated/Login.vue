@@ -52,8 +52,9 @@ export default {
 </script>
 
 <template>
-  <div class="flex w-full justify-center">
-    <div class="mt-16 p-10 w-96">
+  <div class="h-full flex flex-col justify-center">
+    <div class="flex justify-center">
+    <div class="pl-1- pr-10 w-96">
       <div class="w-full flex justify-center mb-20">
         <img src="../../assets/auri-texto.png" width="180" />
       </div>
@@ -82,12 +83,13 @@ export default {
       />
 
       <div class="mt-8">
-        <a
-          href="#"
+        <router-link
+          to="/forgot-password"
           class="text-amber-400/80 font-medium hover:text-amber-300 text-xs"
-          >Esqueceu sua senha?</a
-        >
+          >Esqueceu sua senha?
+          </router-link>
       </div>
+    </div>
     </div>
   </div>
 </template>

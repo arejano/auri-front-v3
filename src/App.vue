@@ -20,6 +20,13 @@ export default {
       this.showMenu = event;
       this.$refs.sidebar.toggle(this.showMenu);
     },
+    sidebarAllowed(title){
+      if(title !== undefined){
+        const blockRoutes = ['Login','ForgotPassword','ResetPassword']
+        return !blockRoutes.includes(title);
+      }
+      return false;
+    }
   },
   computed: {},
 };
@@ -29,7 +36,7 @@ export default {
   <!-- <Notifications /> -->
   <div class="bg-white h-full text-neutral-900 dark:text-zinc-100 bg-estranho">
     <div class="flex h-full">
-      <div v-if="$route.meta.title !== 'Login'">
+      <div v-if="sidebarAllowed($route.meta.title)"> 
         <SideBar />
       </div>
       <main class="p-10 overflow-auto h-full flex justify-center w-full">

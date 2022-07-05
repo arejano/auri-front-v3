@@ -1,6 +1,6 @@
 import { User } from "@/models/User";
 import { ApiService } from "./core/api.service";
-import StoreService from "./core/store.service";
+import StoreService  from "@/services/core/store.service";
 
 class UserService {
   api: ApiService;
@@ -36,6 +36,10 @@ class UserService {
 
   update(request: any) {
     return this.api.post("/client/user_accounts/update/", request);
+  }
+
+  recover(request: any) {
+    return this.api.post("/forgot-password", request);
   }
 }
 
