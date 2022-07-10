@@ -54,7 +54,7 @@ export default {
 <template>
   <div class="h-full flex flex-col justify-center">
     <div class="flex justify-center">
-    <div class="pl-1- pr-10 w-96">
+    <div class="pl-10 pr-10 w-96">
       <div class="w-full flex justify-center mb-20">
         <img src="../../assets/auri-texto.png" width="180" />
       </div>

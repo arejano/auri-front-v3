@@ -33,18 +33,19 @@ export default {
 <template>
   <div class="h-full flex flex-col justify-center">
     <div class="flex justify-center">
-      <div class="w-96 p-2">
+      <div class="w-96 pl-10 pr-10">
         <div class="w-full flex justify-center mb-20">
           <img src="../../assets/auri-texto.png" width="180" />
         </div>
         <div
-          class="w-full mb-12 uppercase font-bold tracking-wider text-xl text-neutral-200"
+          class="w-full mb-8 font-bold tracking-wider text-lg text-neutral-200"
         >
           <p>Recuperar Senha</p>
         </div>
         <div class="flex flex-col space-y-2">
           <Input
             autofocus
+            label="E-mail"
             :value="email"
             type="text"
             placeholder="seuemail@email.com"
