@@ -10,7 +10,7 @@
     "click-outside-vue3": "^4.0.1",
     "flowbite": "^1.4.5",
     "vue": "^3.2.33",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.1.1"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.1",
