@@ -50,10 +50,8 @@ export default {
     subtitle="Acompanhe cada lançamento de forma individual e compare."
   />
 
-  <div class="flex justify-end">
-    <Button @click="toLancamento()" label="Novo Lançamento" class="w-64" />
-  </div>
-  <NavMenu />
 
-  <TableLancamentos :data="contas" class="mt-8" />
+  <TableLancamentos :data="contas" class="mt-8">
+    <Button @click="toLancamento()" label="Novo Lançamento" class="w-64" />
+  </TableLancamentos>
 </template>

@@ -9,7 +9,7 @@ export class LeadsService {
 
   async get(request: any) {
     const response = await this.api.get(`/client/leads?page=${request.page}`);
-    return response.data;
+    return response;
   }
 
   async filter(query: string) {

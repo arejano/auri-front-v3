@@ -38,8 +38,17 @@ export default {
       };
       await this.service.get(request).then((response) => {
         this.data = response.data;
+        this.pagination = {
+          current_page: response.meta.current_page,
+          total: response.meta.total,
+          per_page: response.meta.per_page,
+        };
         this.loading = false;
       });
+    },
+    getPage(p) {
+      this.pagination.current_page = p;
+      this.getData();
     },
     async filterData() {
       const query = "";
@@ -145,5 +154,10 @@ export default {
 
   <Loading v-if="loading" />
   <TableUrls v-if="data.length !== 0" :data="data" class="mt-12" />
-  <Pagination v-if="!loading" class="mt-6 mb-12" />
+  <Pagination
+    :paginacao="pagination"
+    v-if="!loading"
+    class="mt-6 mb-12"
+    @changePage="getPage($event)"
+  />
 </template>

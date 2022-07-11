@@ -30,14 +30,26 @@ export default {
         page: this.pagination.current_page,
       };
       await this.leadsService.get(request).then((response) => {
-        this.data = response;
+      console.log(response)
+        this.data = response.data;
+
+        this.pagination = {
+          current_page: response.meta.current_page,
+          total: response.meta.total,
+          per_page: response.meta.per_page,
+        };
+
         this.loading = false;
       });
+    },
+    getPage(p) {
+      this.pagination.current_page = p;
+      this.getData();
     },
     async filterData() {
       this.searching = true;
       await this.leadsService.filter(this.search).then((response) => {
-        this.data = response;
+        this.data = response.data;
         this.searching = false;
       });
     },
@@ -74,5 +86,10 @@ export default {
   </div>
 
   <TableLeads v-if="!loading" :data="data" />
-  <Pagination v-if="data.length !== 0" class="mt-4" />
+  <Pagination
+    :paginacao="pagination"
+    v-if="!loading"
+    class="mt-4"
+    @changePage="getPage($event)"
+  />
 </template>

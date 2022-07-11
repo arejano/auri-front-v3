@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import "./tailwind.css";
+import "./utils/datepicker.js"
 import App from "./App.vue";
 import router from "./router/router";
 import "flowbite";

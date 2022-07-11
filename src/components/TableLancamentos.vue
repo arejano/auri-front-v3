@@ -15,11 +15,12 @@ export default {
   <div class="">
     <div class="py-4">
       <div class="flex justify-between">
-        <div class="w-full flex gap-8">
+        <div class="w-full items-center flex gap-8">
           <span class="cursor-pointer">Ativos</span>
           <span class="cursor-pointer">Arquivados</span>
         </div>
-          
+        <slot>
+        </slot>
       </div>
     </div>
   </div>
