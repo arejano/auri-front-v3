@@ -1,7 +1,10 @@
 import { ApiService } from "./core/api.service";
 
-export class LancamentosService {
-  constructor(private api: ApiService) {}
+export default class LancamentosService {
+  api: ApiService;
+  constructor() {
+    this.api = new ApiService();
+  }
 
   async get() {
     const response = await this.api.get("/client/launches");

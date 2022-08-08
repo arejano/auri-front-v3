@@ -18,7 +18,6 @@ const menus = {
     path: "/reportar_erro",
     icon: PerfilIcon,
     action: (v) => {
-      console.log(v);
     },
   },
   minhaConta: {
@@ -26,7 +25,6 @@ const menus = {
     path: "/configuracoes",
     icon: PerfilIcon,
     action: (v) => {
-      console.log(v);
     },
   },
   usuarios: {
@@ -34,7 +32,6 @@ const menus = {
     path: "/configuracoes",
     icon: SettingIcon,
     action: (v) => {
-      console.log(v);
     },
   },
   auditoria: {
@@ -42,7 +39,6 @@ const menus = {
     path: "/configuracoes",
     icon: AjudaIcon,
     action: (v) => {
-      console.log(v);
     },
   },
   sair: {
@@ -51,7 +47,6 @@ const menus = {
     icon: LogoutIcon,
 
     action: (v) => {
-      console.log(v);
     },
   },
 };

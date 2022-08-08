@@ -55,10 +55,10 @@ export default {
         v-if="!mini"
         class="dark:bg-neutral-700/50 mr-2 dark:hover:bg-neutral-600/50 
         cursor-pointer dark:border-t dark:border-neutral-700
-        rounded w-8 flex justify-center dark:text-neutral-300/80 transition-all"
+        rounded w-8 h-8 flex justify-center dark:text-neutral-300/80 transition-all"
         @click="changeMini"
       >
-        <ChevronLeft heigh="15" width="20" />
+        <ChevronLeft heigh="15" width="15" />
       </div>
 
       <div

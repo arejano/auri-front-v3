@@ -23,6 +23,4 @@ export function clickOutside(el_target_ref, callback_fn) {
   };
 }
 
-export function teste(){
-  console.log("testando")
-}
+

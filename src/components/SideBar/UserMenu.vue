@@ -55,7 +55,6 @@ export default {
         path: "/reportar_erro",
         icon: PerfilIcon,
         action: (v) => {
-          console.log(v);
         },
       },
       minhaConta: {
@@ -63,7 +62,6 @@ export default {
         path: "/configuracoes",
         icon: PerfilIcon,
         action: (v) => {
-          console.log(v);
         },
       },
       usuarios: {
@@ -71,7 +69,6 @@ export default {
         path: "/configuracoes",
         icon: SettingIcon,
         action: (v) => {
-          console.log(v);
         },
       },
       auditoria: {
@@ -79,7 +76,6 @@ export default {
         path: "/configuracoes",
         icon: AjudaIcon,
         action: (v) => {
-          console.log(v);
         },
       },
       sair: {

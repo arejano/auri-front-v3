@@ -30,7 +30,6 @@ export default {
         page: this.pagination.current_page,
       };
       await this.leadsService.get(request).then((response) => {
-      console.log(response)
         this.data = response.data;
 
         this.pagination = {

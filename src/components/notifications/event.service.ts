@@ -8,5 +8,4 @@ export class EventService {
   constructor(){
     console.log('Iniciando o event service')
   }
-
 }

@@ -53,7 +53,6 @@ export default {
       this.$emit("changePage", page);
     },
     calcPages() {
-      console.log(this.paginacao)
       const total_pages = Math.ceil(
         this.paginacao.total / this.paginacao.per_page
       );

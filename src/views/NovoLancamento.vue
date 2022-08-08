@@ -1,6 +1,10 @@
 <script>
 import DateRangePicker from "@components/DateRangePicker.vue";
 
+import LancamentoService from "@services/lancamentos.services";
+
+import Swal from "sweetalert2";
+
 export default {
   components: { DateRangePicker },
   name: "NovoLancamento",
@@ -9,9 +13,83 @@ export default {
   },
   data() {
     return {
+      lancamentoService: new LancamentoService(),
       nome: "",
-      email: "",
+      umt_campaign: "",
+      classico: false,
+      perpetuo: false,
+      periodoCaptacao: {
+        inicio: "",
+        fim: "",
+      },
+      periodoCarrinho: {
+        inicio: "",
+        fim: "",
+      },
     };
+  },
+  methods: {
+    novoLancamento() {
+      const data = {
+        launch_name: this.nome,
+        campaign_name: this.umt_campaign,
+        launch_type: this.classio ? "classico" : "perpetuo",
+        lead_capture_period_end: this.periodoCaptacao.inicio,
+        lead_capture_period_start: this.periodoCaptacao.fim,
+        open_cart_period_start: this.periodoCarrinho.inicio,
+        open_cart_period_end: this.periodoCarrinho.fim,
+      };
+      this.lancamentoService.new(data).then((response) => {
+        if (response.errors.length !== 0) {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Não foi possivel criar Novo Lançamento",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }else{
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Novo Lançamento criado com sucesso",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
+        }
+      });
+    },
+    changeClassico() {
+      this.classico = true;
+      this.perpetuo = false;
+    },
+    changePerpetuo() {
+      this.perpetuo = true;
+      this.classico = false;
+    },
+    getDataTeste() {
+      return {
+        nome: this.nome,
+        umt_campaign: this.umt_campaign,
+        classico: this.classico,
+        perpetuo: this.perpetuo,
+        periodoCaptacao: this.periodoCaptacao,
+        periodoCarrinho: this.periodoCarrinho,
+      };
+    },
+    attDataPeriodo(event) {
+      this.periodoCaptacao = {
+        inicio: event.inicio,
+        fim: event.fim,
+      };
+    },
+    attDataCarrinho(event) {
+      this.periodoCarrinho = {
+        inicio: event.inicio,
+        fim: event.fim,
+      };
+    },
   },
 };
 </script>
@@ -34,10 +112,10 @@ export default {
       <div class="flex gap-6">
         <Input
           label="umt_campaign"
-          :value="nome"
+          :value="umt_campaign"
           type="text"
           placeholder="Insira o valor da utm_campaign utilizada no lançamento"
-          @input="nome = $event.target.value"
+          @input="umt_campaign = $event.target.value"
         />
 
         <div class="flex items-center gap-4 pt-1">
@@ -45,6 +123,7 @@ export default {
             class="flex items-center border h-11 p-1 rounded px-4 border-neutral-700"
           >
             <input
+              @change="changeClassico()"
               id="classico"
               type="radio"
               value=""
@@ -61,6 +140,7 @@ export default {
             class="flex items-center border h-11 p-1 rounded px-4 border-neutral-700"
           >
             <input
+              @change="changePerpetuo()"
               id="perpetuo"
               type="radio"
               value=""
@@ -77,13 +157,23 @@ export default {
       </div>
 
       <div class="flex gap-4 mb-6">
-        <DateRangePicker label="Período de captação dos leads" />
-        <DateRangePicker label="Período de carrinho aberto" />
+        <DateRangePicker
+          @change="attDataPeriodo($event)"
+          label="Período de captação dos leads"
+        />
+        <DateRangePicker
+          @change="attDataCarrinho($event)"
+          label="Período de carrinho aberto"
+        />
       </div>
     </div>
     <div>
       <div class="flex">
-        <Button class="w-64" label="Criar Lançamento" />
+        <Button
+          class="w-64"
+          @click.native="novoLancamento()"
+          label="Criar Lançamento"
+        />
       </div>
     </div>
   </div>

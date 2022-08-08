@@ -3,6 +3,7 @@ import TableUrls from "@components/TableUrls.vue";
 import Loading from "@components/Loading.vue";
 import Pagination from "@components/Pagination.vue";
 import { UrlsService } from "@services/urls.service";
+import Swal from 'sweetalert2'
 
 export default {
   components: {
@@ -60,6 +61,13 @@ export default {
         if (result !== undefined) {
           //this.limpaForm();
           this.saving = false;
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Criado com sucesso",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
     },

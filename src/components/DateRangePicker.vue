@@ -6,7 +6,26 @@ export default {
   },
   data() {
     return {
+      inicio: "",
+      fim: "",
     };
+  },
+  methods: {
+    onChange() {
+      const periodo = {
+        inicio: this.inicio,
+        fim: this.fim,
+      };
+      this.$emit("change", periodo);
+    },
+    onChangeInicio(event: any) {
+      this.inicio = event.target.value
+      this.onChange();
+    },
+    onChangeFim(event: any) {
+      this.fim = event.target.value
+      this.onChange();
+    },
   },
 };
 </script>
@@ -36,9 +55,13 @@ export default {
           </svg>
         </div>
         <input
+          @input="onChangeInicio"
+          @blur="onChangeInicio"
+          :value="inicio"
+          :model="inicio"
           name="start"
           type="text"
-          class="bg-neutral-50 border border-neutral-300 text-neutral-900 sm:text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-neutral-800 dark:bg-neutral-800 dark:border-0 dark:border-t dark:border-neutral-700/70 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-neutral-50 border border-neutral-300 text-neutral-900 sm:text-sm rounded focus:ring-neutral-500 focus:border-neutral-500 block w-full pl-10 p-2.5 dark:bg-neutral-800 dark:bg-neutral-800 dark:border-0 dark:border-t dark:border-neutral-700/70 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
           placeholder="Data inicial"
         />
       </div>
@@ -61,9 +84,13 @@ export default {
           </svg>
         </div>
         <input
+          @input="onChangeFim"
+          @blur="onChangeFim"
+          :value="fim"
+          :model="fim"
           name="end"
           type="text"
-          class="bg-neutral-50 border border-neutral-300 text-neutral-900 sm:text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-neutral-800 dark:border-0 dark:border-t dark:border-neutral-700/70 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-neutral-50 border border-neutral-300 text-neutral-900 sm:text-sm rounded focus:ring-neutral-500 focus:border-neutral-500 block w-full pl-10 p-2.5 dark:bg-neutral-800 dark:border-0 dark:border-t dark:border-neutral-700/70 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
           placeholder="Data final"
         />
       </div>
